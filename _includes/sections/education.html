@@ -1,0 +1,48 @@
+<section class="site-section" id="educacion" aria-labelledby="education-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="education-title">
+        <span data-lang-es><span>Educación</span></span>
+        <span data-lang-en><span>Education</span></span>
+      </h2>
+    </div>
+
+    {% if site.data.education.size > 0 %}
+      <div class="education-list">
+        {% for item in site.data.education %}
+          <article class="education-card scroll-reveal">
+            <h3 class="education-card__degree">
+              <span data-lang-es>{{ item.degree }}</span>
+              {% if item.degree_en %}
+                <span data-lang-en>{{ item.degree_en }}</span>
+              {% else %}
+                <span data-lang-en>{{ item.degree }}</span>
+              {% endif %}
+            </h3>
+            <p class="education-card__institution">{{ item.institution }}</p>
+            <p class="education-card__period">
+              <span data-lang-es>{{ item.period }}</span>
+              {% if item.period_en %}
+                <span data-lang-en>{{ item.period_en }}</span>
+              {% else %}
+                <span data-lang-en>{{ item.period }}</span>
+              {% endif %}
+            </p>
+            {% if item.description and item.description != "" %}
+              <p style="margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                <span data-lang-es>{{ item.description }}</span>
+                {% if item.description_en %}
+                  <span data-lang-en>{{ item.description_en }}</span>
+                {% else %}
+                  <span data-lang-en>{{ item.description }}</span>
+                {% endif %}
+              </p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="section-empty" data-i18n="section.empty">Próximamente.</p>
+    {% endif %}
+  </div>
+</section>

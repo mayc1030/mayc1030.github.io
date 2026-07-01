@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');
+      if(t) document.documentElement.setAttribute('data-theme',t);
+      if(l) document.documentElement.setAttribute('data-lang',l);
+    })();
+  </script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Novedades de JavaScript ES2024 que debes conocer | Maycol Sánchez — Desarrollador Web</title>
+<meta name="description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+<meta name="author" content="Maycol Sánchez">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Novedades de JavaScript ES2024 que debes conocer | Maycol Sánchez — Desarrollador Web">
+<meta property="og:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maycol Sánchez — Desarrollador Web">
+<meta name="twitter:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- Dark mode: leer preferencia antes de pintar para evitar flash -->
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', stored || preferred);
+  })();
+</script>
+
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Novedades de JavaScript ES2024 que debes conocer | Maycol Sánchez — Desarrollador Web</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Novedades de JavaScript ES2024 que debes conocer" />
+<meta name="author" content="Maycol Sánchez" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="ES2024 trae mejoras importantes al lenguaje. Repaso las características más útiles con ejemplos prácticos." />
+<meta name="twitter:description" property="og:description" content="ES2024 trae mejoras importantes al lenguaje. Repaso las características más útiles con ejemplos prácticos." />
+<link rel="canonical" href="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/" />
+<meta property="og:url" content="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/" />
+<meta property="og:site_name" content="Maycol Sánchez — Desarrollador Web" />
+<meta property="og:image" content="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-22T00:00:00-05:00" />
+<meta property="article:modified_time" content="2026-06-22T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/" />
+<meta name="twitter:title" content="Novedades de JavaScript ES2024 que debes conocer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Maycol Sánchez"},"dateModified":"2026-06-22T00:00:00-05:00","datePublished":"2026-06-22T00:00:00-05:00","description":"ES2024 trae mejoras importantes al lenguaje. Repaso las características más útiles con ejemplos prácticos.","headline":"Novedades de JavaScript ES2024 que debes conocer","image":"https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/","mainEntityOfPage":{"@type":"WebPage","@id":"https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/"},"url":"https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <div class="site-loader__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <p class="site-loader__name">Maycol<span>.</span></p>
+    <div class="site-loader__bar"><span></span></div>
+  </div>
+
+  <header class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <a href="/" class="site-logo" aria-label="Inicio">
+      Maycol<span>.</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="/#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="/#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="/#skills" data-i18n="nav.skills">Skills</a>
+      <a href="/#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="search-btn" id="search-btn" aria-label="Buscar" title="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+
+      <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Change language" title="Cambiar idioma">
+        <span class="lang-toggle__es">ES</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__en">EN</span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar posts" hidden>
+  <div class="search-overlay__backdrop"></div>
+  <div class="search-overlay__panel">
+    <div class="search-overlay__input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="search-overlay__icon">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-overlay-input"
+        class="search-overlay__input"
+        placeholder="Buscar posts..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Buscar posts">
+      <button class="search-overlay__close" id="search-overlay-close" aria-label="Cerrar búsqueda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <span style="font-size:.7rem;font-weight:600;opacity:.6;line-height:1">ESC</span>
+      </button>
+    </div>
+    <div class="search-overlay__results" id="search-overlay-results" role="list" aria-live="polite"></div>
+  </div>
+</div>
+
+
+  <main id="main-content" role="main">
+    <div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
+<article class="post-page">
+  <div class="container">
+
+    <div class="post-page__back">
+      <a href="/blog/" class="btn btn--ghost btn--sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Blog
+      </a>
+    </div>
+
+    <header class="post-page__header">
+      
+        <div class="post-page__categories">
+          
+            <a href="/blog/?category=javascript" class="badge badge--tech">JavaScript</a>
+          
+            <a href="/blog/?category=desarrollo-web" class="badge badge--tech">Desarrollo Web</a>
+          
+        </div>
+      
+
+      <h1 class="post-page__title">Novedades de JavaScript ES2024 que debes conocer</h1>
+
+      <div class="post-page__meta">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          22 Jun 2026
+        </span>
+        
+        
+        
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          1 min de lectura
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-page__emoji-cover" aria-hidden="true">⚡</div>
+    
+
+    <div class="post-content">
+      <p>ES2024 (ECMAScript 2024) llegó con varias características que simplifican el código del día a día. Estas son las que más uso en proyectos reales.</p>
+
+<h2 id="objectgroupby">Object.groupBy</h2>
+
+<p>Agrupa elementos de un array sin necesidad de librerías externas:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Post A</span><span class="dl">'</span><span class="p">,</span> <span class="na">category</span><span class="p">:</span> <span class="dl">'</span><span class="s1">drupal</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Post B</span><span class="dl">'</span><span class="p">,</span> <span class="na">category</span><span class="p">:</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Post C</span><span class="dl">'</span><span class="p">,</span> <span class="na">category</span><span class="p">:</span> <span class="dl">'</span><span class="s1">drupal</span><span class="dl">'</span> <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">grouped</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">groupBy</span><span class="p">(</span><span class="nx">posts</span><span class="p">,</span> <span class="nx">post</span> <span class="o">=&gt;</span> <span class="nx">post</span><span class="p">.</span><span class="nx">category</span><span class="p">);</span>
+<span class="c1">// { drupal: [...], react: [...] }</span>
+</code></pre></div></div>
+
+<h2 id="promisewithresolvers">Promise.withResolvers</h2>
+
+<p>Expone <code class="language-plaintext highlighter-rouge">resolve</code> y <code class="language-plaintext highlighter-rouge">reject</code> fuera del constructor:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">promise</span><span class="p">,</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span> <span class="p">}</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nf">withResolvers</span><span class="p">();</span>
+
+<span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nf">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">listo</span><span class="dl">'</span><span class="p">),</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">promise</span><span class="p">;</span> <span class="c1">// 'listo'</span>
+</code></pre></div></div>
+
+<h2 id="arrayprototypetosorted--toreversed">Array.prototype.toSorted / toReversed</h2>
+
+<p>Versiones inmutables de <code class="language-plaintext highlighter-rouge">sort</code> y <code class="language-plaintext highlighter-rouge">reverse</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">nums</span><span class="p">.</span><span class="nf">toSorted</span><span class="p">();</span> <span class="c1">// nuevo array ordenado</span>
+<span class="c1">// nums no cambia</span>
+</code></pre></div></div>
+
+<p>Estas tres ya tienen soporte en todos los navegadores modernos y son las que más impacto tienen en el código cotidiano.</p>
+
+    </div>
+
+    
+      <div class="post-page__tags">
+        
+          <span class="badge badge--skill"># javascript</span>
+        
+          <span class="badge badge--skill"># es2024</span>
+        
+          <span class="badge badge--skill"># frontend</span>
+        
+      </div>
+    
+
+    
+
+
+
+
+
+<div class="share-bar">
+  <span class="share-bar__label" data-i18n="share.label">Compartir</span>
+  <div class="share-bar__links">
+
+    <a class="share-btn share-btn--whatsapp"
+       href="https://wa.me/?text=Novedades+de+JavaScript+ES2024+que+debes+conocer+https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F06%2F22%2Fnovedades-javascript-es2024%2F"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--facebook"
+       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F06%2F22%2Fnovedades-javascript-es2024%2F"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--linkedin"
+       href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F06%2F22%2Fnovedades-javascript-es2024%2F"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--x"
+       href="https://x.com/intent/tweet?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F06%2F22%2Fnovedades-javascript-es2024%2F&text=Novedades+de+JavaScript+ES2024+que+debes+conocer"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en X">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+
+    <button class="share-btn share-btn--copy"
+            data-share-copy="https://mayc1030.github.io/blog/2026/06/22/novedades-javascript-es2024/"
+            aria-label="Copiar enlace">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>
+    </button>
+
+  </div>
+</div>
+
+
+    <nav class="post-page__nav" aria-label="Navegación entre posts">
+      
+        <a href="/blog/2026/06/18/guia-react-hooks/" class="post-page__nav-link post-page__nav-link--prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>
+            <small>Anterior</small>
+            <strong>Guía práctica de React Hooks en 2026</strong>
+          </span>
+        </a>
+      
+
+      
+        <a href="/blog/2026/06/24/bienvenido-a-mi-blog/" class="post-page__nav-link post-page__nav-link--next">
+          <span>
+            <small>Siguiente</small>
+            <strong>Bienvenido a mi blog</strong>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+    </nav>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      Diseñado &amp; construido por
+      <a href="#inicio">Maycol Sánchez</a>
+      &mdash; 2026
+    </p>
+    <div class="footer-social">
+      
+        
+          <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            GitHub
+          </a>
+        
+      
+        
+          <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            LinkedIn
+          </a>
+        
+      
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+
+    a {
+      color: var(--color-primary);
+      font-weight: var(--weight-medium);
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: var(--space-lg);
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      font-weight: var(--weight-medium);
+      transition: color var(--transition-fast);
+
+      &:hover { color: var(--color-primary); }
+    }
+  }
+</style>
+
+
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);" aria-hidden="true">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+      <line x1="14" y1="4" x2="10" y2="20"/>
+    </svg>
+  </button>
+
+  <script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>

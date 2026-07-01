@@ -1,0 +1,68 @@
+<article class="project-card scroll-reveal" role="listitem">
+  {% if include.project.url %}
+    <a href="{{ include.project.url }}" class="project-card__image{% unless include.project.image and include.project.image != '' %} project-card__image--placeholder{% endunless %}" aria-hidden="true" tabindex="-1">
+  {% else %}
+    <div class="project-card__image{% unless include.project.image and include.project.image != '' %} project-card__image--placeholder{% endunless %}">
+  {% endif %}
+    {% if include.project.image and include.project.image != "" %}
+      <img src="{{ include.project.image | relative_url }}"
+           alt="Captura de {{ include.project.title }}"
+           loading="lazy"
+           width="640"
+           height="360">
+    {% else %}
+      <span aria-hidden="true">{{ include.project.emoji | default: "💻" }}</span>
+    {% endif %}
+
+    {% if include.project.featured %}
+      <span class="badge badge--featured" style="position: absolute; top: var(--space-sm); right: var(--space-sm);" data-i18n="badge.featured">★ Destacado</span>
+    {% endif %}
+  {% if include.project.url %}</a>{% else %}</div>{% endif %}
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      {% if include.project.url %}
+        <a href="{{ include.project.url }}">{{ include.project.title }}</a>
+      {% else %}
+        {{ include.project.title }}
+      {% endif %}
+    </h3>
+    <p class="project-card__description">{{ include.project.description }}</p>
+
+    {% if include.project.tech.size > 0 %}
+      <div class="project-card__tech">
+        {% for tech in include.project.tech %}
+          <span class="badge badge--tech">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="project-card__actions">
+      {% if include.project.url %}
+        <a href="{{ include.project.url }}" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      {% endif %}
+      {% if include.project.url_demo and include.project.url_demo != "" %}
+        <a href="{{ include.project.url_demo }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+          Demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      {% endif %}
+      {% if include.project.url_repo and include.project.url_repo != "" %}
+        <a href="{{ include.project.url_repo }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="btn.code">Código</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</article>

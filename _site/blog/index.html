@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');
+      if(t) document.documentElement.setAttribute('data-theme',t);
+      if(l) document.documentElement.setAttribute('data-lang',l);
+    })();
+  </script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Blog | Maycol Sánchez — Desarrollador Web</title>
+<meta name="description" content="Artículos sobre desarrollo web, Drupal, JavaScript y tecnología.">
+<meta name="author" content="Maycol Sánchez">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Blog | Maycol Sánchez — Desarrollador Web">
+<meta property="og:description" content="Artículos sobre desarrollo web, Drupal, JavaScript y tecnología.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayc1030.github.io/blog/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maycol Sánchez — Desarrollador Web">
+<meta name="twitter:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://mayc1030.github.io/blog/">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- Dark mode: leer preferencia antes de pintar para evitar flash -->
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', stored || preferred);
+  })();
+</script>
+
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Blog | Maycol Sánchez — Desarrollador Web</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Blog" />
+<meta name="author" content="Maycol Sánchez" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Artículos sobre desarrollo web, Drupal, JavaScript y tecnología." />
+<meta name="twitter:description" property="og:description" content="Artículos sobre desarrollo web, Drupal, JavaScript y tecnología." />
+<link rel="canonical" href="https://mayc1030.github.io/blog/" />
+<meta property="og:url" content="https://mayc1030.github.io/blog/" />
+<meta property="og:site_name" content="Maycol Sánchez — Desarrollador Web" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Maycol Sánchez"},"description":"Artículos sobre desarrollo web, Drupal, JavaScript y tecnología.","headline":"Blog","url":"https://mayc1030.github.io/blog/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <div class="site-loader__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <p class="site-loader__name">Maycol<span>.</span></p>
+    <div class="site-loader__bar"><span></span></div>
+  </div>
+
+  <header class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <a href="/" class="site-logo" aria-label="Inicio">
+      Maycol<span>.</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="/#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="/#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="/#skills" data-i18n="nav.skills">Skills</a>
+      <a href="/#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="search-btn" id="search-btn" aria-label="Buscar" title="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+
+      <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Change language" title="Cambiar idioma">
+        <span class="lang-toggle__es">ES</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__en">EN</span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar posts" hidden>
+  <div class="search-overlay__backdrop"></div>
+  <div class="search-overlay__panel">
+    <div class="search-overlay__input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="search-overlay__icon">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-overlay-input"
+        class="search-overlay__input"
+        placeholder="Buscar posts..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Buscar posts">
+      <button class="search-overlay__close" id="search-overlay-close" aria-label="Cerrar búsqueda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <span style="font-size:.7rem;font-weight:600;opacity:.6;line-height:1">ESC</span>
+      </button>
+    </div>
+    <div class="search-overlay__results" id="search-overlay-results" role="list" aria-live="polite"></div>
+  </div>
+</div>
+
+
+  <main id="main-content" role="main">
+    <section class="blog-page">
+  <div class="container">
+
+    <div class="blog-page__header">
+      <h1 class="section-title">Blog<span>.</span></h1>
+      <p class="section-subtitle">Aprendizajes, tutoriales y reflexiones sobre desarrollo web.</p>
+    </div>
+
+    
+    
+    
+
+    
+      <div class="blog-filters" id="blog-filters">
+        <button class="blog-filter is-active" data-filter="all">Todos</button>
+        
+          
+            <button class="blog-filter" data-filter="desarrollo web">Desarrollo Web</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="videojuegos 3d">Videojuegos 3D</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="arquitectura">Arquitectura</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="javascript">JavaScript</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="desarrollo móvil">Desarrollo Móvil</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="general">General</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="react">React</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="php">PHP</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="drupal">Drupal</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="tutorial">Tutorial</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="drupal">drupal</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="steamdeck">steamdeck</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="emulacion">emulacion</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="nintendo_switch">nintendo_switch</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="batocera">batocera</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="git">git</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="ddev">ddev</button>
+          
+        
+          
+            <button class="blog-filter" data-filter="lando">lando</button>
+          
+        
+      </div>
+    
+
+    <p class="blog-results-count" id="blog-results-count" aria-live="polite">
+      29 posts
+    </p>
+
+    
+      <div class="blog-grid" id="blog-grid">
+        
+          
+
+
+
+<article class="post-card"
+  data-search="arquitectura de videojuegos 3d en el navegador con three.js, rapier y web audio estudio de ingeniería detrás de penalty strike 2026: balística con efecto magnus en webassembly, audio procedural sin assets y optimización extrema de carga. desarrollo web videojuegos 3d threejs rapier typescript webaudio vite gamedev"
+  data-categories="desarrollo web,videojuegos 3d">
+
+  <a href="/blog/2026/07/01/desarrollo-videojuegos-3d-navegador-threejs-rapier/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🎮</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+          <span class="badge badge--tech">Videojuegos 3D</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/07/01/desarrollo-videojuegos-3d-navegador-threejs-rapier/">Arquitectura de Videojuegos 3D en el Navegador con Three.js, Rapier y Web Audio</a>
+    </h2>
+
+    <p class="post-card__excerpt">Estudio de ingeniería detrás de Penalty Strike 2026: balística con efecto Magnus en WebAssembly, audio procedural sin assets y optimización extrema de carga.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">01 Jul 2026</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="generación de reportes pdf y excel al 100% en el navegador para spas cómo integrar jspdf, autotable y sheetjs en aplicaciones de página única (spa) sin depender de servidores backend, combinando seguridad y ofuscación. desarrollo web arquitectura vanillajs jspdf sheetjs chartjs obfuscator nodejs"
+  data-categories="desarrollo web,arquitectura">
+
+  <a href="/blog/2026/07/01/construccion-spas-analiticas-reportes-pdf-excel-client-side/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>📅</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+          <span class="badge badge--tech">Arquitectura</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/07/01/construccion-spas-analiticas-reportes-pdf-excel-client-side/">Generación de Reportes PDF y Excel al 100% en el Navegador para SPAs</a>
+    </h2>
+
+    <p class="post-card__excerpt">Cómo integrar jsPDF, AutoTable y SheetJS en aplicaciones de página única (SPA) sin depender de servidores backend, combinando seguridad y ofuscación.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">01 Jul 2026</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="arquitectura serverless y vanilla js en polla mundialista 2026 análisis técnico y lecciones de arquitectura tras construir una plataforma spa de pronósticos en tiempo real para el mundial fifa 2026 usando vanilla js, supabase y postgresql. desarrollo web javascript vanillajs supabase postgresql serverless jekyll"
+  data-categories="desarrollo web,javascript">
+
+  <a href="/blog/2026/07/01/arquitectura-y-desarrollo-polla-mundialista-2026/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>⚽</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+          <span class="badge badge--tech">JavaScript</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/07/01/arquitectura-y-desarrollo-polla-mundialista-2026/">Arquitectura Serverless y Vanilla JS en Polla Mundialista 2026</a>
+    </h2>
+
+    <p class="post-card__excerpt">Análisis técnico y lecciones de arquitectura tras construir una plataforma SPA de pronósticos en tiempo real para el Mundial FIFA 2026 usando Vanilla JS, Supabase...</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">01 Jul 2026</span>
+      <span class="post-card__read-time">3 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="cómo construir un sistema de reservas spa con vanilla js y supabase estudio de caso sobre la arquitectura detrás de los angeles barber: agendamiento en tiempo real, cálculo de disponibilidad y separación de interfaces sin frameworks. desarrollo web arquitectura vanillajs supabase postgresql glassmorphism spa"
+  data-categories="desarrollo web,arquitectura">
+
+  <a href="/blog/2026/07/01/arquitectura-spa-reservas-barberia-vanilla-js/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>💈</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+          <span class="badge badge--tech">Arquitectura</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/07/01/arquitectura-spa-reservas-barberia-vanilla-js/">Cómo construir un Sistema de Reservas SPA con Vanilla JS y Supabase</a>
+    </h2>
+
+    <p class="post-card__excerpt">Estudio de caso sobre la arquitectura detrás de Los Angeles Barber: agendamiento en tiempo real, cálculo de disponibilidad y separación de interfaces sin frameworks.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">01 Jul 2026</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="arquitectura offline-first e impresión térmica esc/pos por bluetooth en apps móviles híbridas cómo construir un sistema pos móvil nativo para android en react y capacitor con sincronización en indexeddb e impresión térmica sin drivers. desarrollo móvil arquitectura react capacitor android bluetooth escpos offlinefirst supabase"
+  data-categories="desarrollo móvil,arquitectura">
+
+  <a href="/blog/2026/07/01/arquitectura-offline-first-impresion-termica-bluetooth-capacitor-react/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>📱</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Desarrollo Móvil</span>
+        
+          <span class="badge badge--tech">Arquitectura</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/07/01/arquitectura-offline-first-impresion-termica-bluetooth-capacitor-react/">Arquitectura Offline-First e Impresión Térmica ESC/POS por Bluetooth en Apps Móviles Híbridas</a>
+    </h2>
+
+    <p class="post-card__excerpt">Cómo construir un sistema POS móvil nativo para Android en React y Capacitor con sincronización en IndexedDB e impresión térmica sin drivers.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">01 Jul 2026</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="bienvenido a mi blog este es el primer post de mi blog. aquí compartiré aprendizajes, tutoriales y reflexiones sobre desarrollo web, tecnología y todo lo que encuentre interesante en el camino. general blog presentación"
+  data-categories="general">
+
+  <a href="/blog/2026/06/24/bienvenido-a-mi-blog/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>👋</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">General</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/06/24/bienvenido-a-mi-blog/">Bienvenido a mi blog</a>
+    </h2>
+
+    <p class="post-card__excerpt">Este es el primer post de mi blog. Aquí compartiré aprendizajes, tutoriales y reflexiones sobre desarrollo web, tecnología y todo lo que encuentre interesante en...</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Jun 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="novedades de javascript es2024 que debes conocer es2024 trae mejoras importantes al lenguaje. repaso las características más útiles con ejemplos prácticos. javascript desarrollo web javascript es2024 frontend"
+  data-categories="javascript,desarrollo web">
+
+  <a href="/blog/2026/06/22/novedades-javascript-es2024/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>⚡</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">JavaScript</span>
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/06/22/novedades-javascript-es2024/">Novedades de JavaScript ES2024 que debes conocer</a>
+    </h2>
+
+    <p class="post-card__excerpt">ES2024 trae mejoras importantes al lenguaje. Repaso las características más útiles con ejemplos prácticos.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">22 Jun 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="guía práctica de react hooks en 2026 usestate, useeffect, usecallback y cuándo usar cada uno sin complicarte la vida. react javascript react hooks frontend"
+  data-categories="react,javascript">
+
+  <a href="/blog/2026/06/18/guia-react-hooks/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>⚛️</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">React</span>
+        
+          <span class="badge badge--tech">JavaScript</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/06/18/guia-react-hooks/">Guía práctica de React Hooks en 2026</a>
+    </h2>
+
+    <p class="post-card__excerpt">useState, useEffect, useCallback y cuándo usar cada uno sin complicarte la vida.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">18 Jun 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="php 8.3: las características que más uso typed class constants, json_validate() y readonly en clases anónimas. lo que realmente cambió mi flujo de trabajo. php php php83 backend"
+  data-categories="php">
+
+  <a href="/blog/2026/06/12/php-83-nuevas-caracteristicas/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🐘</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">PHP</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/06/12/php-83-nuevas-caracteristicas/">PHP 8.3: las características que más uso</a>
+    </h2>
+
+    <p class="post-card__excerpt">Typed class constants, json_validate() y readonly en clases anónimas. Lo que realmente cambió mi flujo de trabajo.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">12 Jun 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="lo que aprendí trabajando con drupal durante años drupal tiene fama de ser difícil. después de años usándolo en producción, comparto lo que me hubiera gustado saber desde el principio. drupal desarrollo web drupal php cms backend"
+  data-categories="drupal,desarrollo web">
+
+  <a href="/blog/2026/06/10/mi-experiencia-con-drupal/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🔧</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Drupal</span>
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/06/10/mi-experiencia-con-drupal/">Lo que aprendí trabajando con Drupal durante años</a>
+    </h2>
+
+    <p class="post-card__excerpt">Drupal tiene fama de ser difícil. Después de años usándolo en producción, comparto lo que me hubiera gustado saber desde el principio.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">10 Jun 2026</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="css grid vs flexbox: cuándo usar cada uno la regla simple que uso para decidir entre grid y flexbox sin pensarlo dos veces. tutorial desarrollo web css grid flexbox frontend"
+  data-categories="tutorial,desarrollo web">
+
+  <a href="/blog/2026/06/08/css-grid-vs-flexbox/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🎨</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Tutorial</span>
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/06/08/css-grid-vs-flexbox/">CSS Grid vs Flexbox: cuándo usar cada uno</a>
+    </h2>
+
+    <p class="post-card__excerpt">La regla simple que uso para decidir entre Grid y Flexbox sin pensarlo dos veces.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">08 Jun 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="mi flujo de trabajo con git en proyectos reales cómo organizo ramas, commits y code reviews para no perder el hilo en proyectos con varios desarrolladores. general tutorial git workflow herramientas"
+  data-categories="general,tutorial">
+
+  <a href="/blog/2026/05/30/git-flujo-de-trabajo/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🌿</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">General</span>
+        
+          <span class="badge badge--tech">Tutorial</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/05/30/git-flujo-de-trabajo/">Mi flujo de trabajo con Git en proyectos reales</a>
+    </h2>
+
+    <p class="post-card__excerpt">Cómo organizo ramas, commits y code reviews para no perder el hilo en proyectos con varios desarrolladores.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">30 May 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="drupal views: más allá de lo básico relaciones, argumentos contextuales y caché de views. lo que no aprenderás en la documentación oficial. drupal drupal views backend"
+  data-categories="drupal">
+
+  <a href="/blog/2026/05/25/drupal-views-guia-avanzada/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🔩</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Drupal</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/05/25/drupal-views-guia-avanzada/">Drupal Views: más allá de lo básico</a>
+    </h2>
+
+    <p class="post-card__excerpt">Relaciones, argumentos contextuales y caché de Views. Lo que no aprenderás en la documentación oficial.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">25 May 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="accesibilidad web: errores comunes y cómo corregirlos los 5 errores de accesibilidad que aparecen en casi todos los proyectos y cómo solucionarlos en menos de una hora. desarrollo web tutorial accesibilidad html a11y"
+  data-categories="desarrollo web,tutorial">
+
+  <a href="/blog/2026/05/18/accesibilidad-web-mejores-practicas/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>♿</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+          <span class="badge badge--tech">Tutorial</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/05/18/accesibilidad-web-mejores-practicas/">Accesibilidad web: errores comunes y cómo corregirlos</a>
+    </h2>
+
+    <p class="post-card__excerpt">Los 5 errores de accesibilidad que aparecen en casi todos los proyectos y cómo solucionarlos en menos de una hora.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">18 May 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="construyendo apis rest con node.js sin frameworks pesados cómo estructuro apis en node.js con express mínimo y sin dependencias innecesarias. javascript nodejs api rest backend"
+  data-categories="javascript">
+
+  <a href="/blog/2026/05/12/apis-rest-con-nodejs/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🚀</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">JavaScript</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/05/12/apis-rest-con-nodejs/">Construyendo APIs REST con Node.js sin frameworks pesados</a>
+    </h2>
+
+    <p class="post-card__excerpt">Cómo estructuro APIs en Node.js con Express mínimo y sin dependencias innecesarias.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">12 May 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="composer: gestión de dependencias php que todo dev debería dominar más allá del require básico. scripts, autoloading y cómo mantener un composer.json limpio. php tutorial php composer backend herramientas"
+  data-categories="php,tutorial">
+
+  <a href="/blog/2026/05/07/composer-gestion-dependencias-php/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>📦</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">PHP</span>
+        
+          <span class="badge badge--tech">Tutorial</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/05/07/composer-gestion-dependencias-php/">Composer: gestión de dependencias PHP que todo dev debería dominar</a>
+    </h2>
+
+    <p class="post-card__excerpt">Más allá del require básico. Scripts, autoloading y cómo mantener un composer.json limpio.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">07 May 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="optimización de rendimiento en react: lo que realmente importa profiler, re-renders innecesarios y cuándo usar memo. sin micro-optimizaciones que no cambian nada. react javascript react performance frontend"
+  data-categories="react,javascript">
+
+  <a href="/blog/2026/04/28/react-performance-optimizacion/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🏎️</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">React</span>
+        
+          <span class="badge badge--tech">JavaScript</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/04/28/react-performance-optimizacion/">Optimización de rendimiento en React: lo que realmente importa</a>
+    </h2>
+
+    <p class="post-card__excerpt">Profiler, re-renders innecesarios y cuándo usar memo. Sin micro-optimizaciones que no cambian nada.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">28 Apr 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="migraciones en drupal 10: de d7 a d10 sin morir en el intento migrate api, fuentes personalizadas y cómo depurar migraciones que fallan silenciosamente. drupal drupal migraciones backend drupal10"
+  data-categories="drupal">
+
+  <a href="/blog/2026/04/20/migraciones-drupal-10/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>🔄</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Drupal</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/04/20/migraciones-drupal-10/">Migraciones en Drupal 10: de D7 a D10 sin morir en el intento</a>
+    </h2>
+
+    <p class="post-card__excerpt">Migrate API, fuentes personalizadas y cómo depurar migraciones que fallan silenciosamente.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">20 Apr 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="scss: variables, mixins y cuándo usar custom properties de css la diferencia práctica entre variables scss y css custom properties, y mixins que realmente ahorran tiempo. tutorial desarrollo web scss css frontend tutorial"
+  data-categories="tutorial,desarrollo web">
+
+  <a href="/blog/2026/04/14/scss-variables-y-mixins/" class="post-card__image post-card__image--placeholder" tabindex="-1" aria-hidden="true">
+    
+      <span>💅</span>
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">Tutorial</span>
+        
+          <span class="badge badge--tech">Desarrollo Web</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/2026/04/14/scss-variables-y-mixins/">SCSS: variables, mixins y cuándo usar custom properties de CSS</a>
+    </h2>
+
+    <p class="post-card__excerpt">La diferencia práctica entre variables SCSS y CSS custom properties, y mixins que realmente ahorran tiempo.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">14 Apr 2026</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="drupal drupal drupal "
+  data-categories="drupal">
+
+  <a href="/blog/drupal/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/postdrupal.png" alt="Drupal" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">drupal</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/drupal/">Drupal</a>
+    </h2>
+
+    <p class="post-card__excerpt">Drupal</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">29 Jan 2025</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="gestión automática de roms en steam deck: creación y limpieza de enlaces simbólicos con bash estos dos scripts están diseñados para gestionar enlaces simbólicos de roms en la steam deck para emulationstation. permiten organizar juegos almacenados en discos externos y sincronizarlos con la carpeta de emulationstation sin necesidad de mover archivos. steamdeck emulacion "
+  data-categories="steamdeck,emulacion">
+
+  <a href="/blog/steamdeck/p3" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/poststeamdeckp1.png" alt="Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">steamdeck</span>
+        
+          <span class="badge badge--tech">emulacion</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/steamdeck/p3">Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash</a>
+    </h2>
+
+    <p class="post-card__excerpt">Estos dos scripts están diseñados para gestionar enlaces simbólicos de ROMs en la Steam Deck para EmulationStation. Permiten organizar juegos almacenados en discos externos y...</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Dec 2024</span>
+      <span class="post-card__read-time">6 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="creacion automatizada de enlaces simbolicos de roms, desde un disco externo a carpeta de roms en steamdeck este script en bash crea enlaces simbólicos para juegos en una carpeta específica de emulationstation en steam deck. steamdeck emulacion "
+  data-categories="steamdeck,emulacion">
+
+  <a href="/blog/steamdeck/p2" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/poststeamdeckp1.png" alt="Creacion Automatizada de Enlaces Simbolicos de Roms, desde un Disco externo a carpeta de roms en SteamDeck" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">steamdeck</span>
+        
+          <span class="badge badge--tech">emulacion</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/steamdeck/p2">Creacion Automatizada de Enlaces Simbolicos de Roms, desde un Disco externo a carpeta de roms en SteamDeck</a>
+    </h2>
+
+    <p class="post-card__excerpt">Este script en Bash crea enlaces simbólicos para juegos en una carpeta específica de EmulationStation en Steam Deck.</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Dec 2024</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="listado de juegos de nintendo switch emulados por yuzu en steamdeck juegos compatibles en la steamdeck mediante yuzu steamdeck emulacion "
+  data-categories="steamdeck,emulacion">
+
+  <a href="/blog/steamdeck/p1" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/poststeamdeck.png" alt="Listado de Juegos de Nintendo Switch Emulados por Yuzu en SteamDeck" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">steamdeck</span>
+        
+          <span class="badge badge--tech">emulacion</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/steamdeck/p1">Listado de Juegos de Nintendo Switch Emulados por Yuzu en SteamDeck</a>
+    </h2>
+
+    <p class="post-card__excerpt">Juegos Compatibles en la SteamDeck mediante Yuzu</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Dec 2024</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="steamdeck steamdeck steamdeck "
+  data-categories="steamdeck">
+
+  <a href="/blog/steamdeck/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/poststeamdeck.png" alt="Steamdeck" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">steamdeck</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/steamdeck/">Steamdeck</a>
+    </h2>
+
+    <p class="post-card__excerpt">Steamdeck</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Dec 2024</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="nintendo switch nintendo switch nintendo_switch "
+  data-categories="nintendo_switch">
+
+  <a href="/blog/nintendoswitch/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/postnintendoswitch.png" alt="Nintendo Switch" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">nintendo_switch</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/nintendoswitch/">Nintendo Switch</a>
+    </h2>
+
+    <p class="post-card__excerpt">Nintendo Switch</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Dec 2024</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="batocera batocera batocera "
+  data-categories="batocera">
+
+  <a href="/blog/batocera/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/postbatocera.png" alt="Batocera" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">batocera</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/batocera/">Batocera</a>
+    </h2>
+
+    <p class="post-card__excerpt">Batocera</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">24 Dec 2024</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="configuracion de validaciones de codigo phpcbf y phpcs en drupal atraves de git configuracion de validaciones de codigo phpcbf y phpcs en drupal atraves de git drupal git "
+  data-categories="drupal,git">
+
+  <a href="/blog/validadciones-in-git-drupal/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/postgit.png" alt="Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">drupal</span>
+        
+          <span class="badge badge--tech">git</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/validadciones-in-git-drupal/">Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git</a>
+    </h2>
+
+    <p class="post-card__excerpt">Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">23 Dec 2024</span>
+      <span class="post-card__read-time">2 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="configuracion de ddev para un proyecto drupal configuracion de ddev para un proyecto drupal drupal ddev "
+  data-categories="drupal,ddev">
+
+  <a href="/blog/ddev/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/postddev.png" alt="Configuracion de DDEV para un proyecto Drupal" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">drupal</span>
+        
+          <span class="badge badge--tech">ddev</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/ddev/">Configuracion de DDEV para un proyecto Drupal</a>
+    </h2>
+
+    <p class="post-card__excerpt">Configuracion de ddev para un proyecto Drupal</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">22 Dec 2024</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+          
+
+
+
+<article class="post-card"
+  data-search="configuracion de lando para un proyecto drupal configuracion de lando para un proyecto drupal drupal lando "
+  data-categories="drupal,lando">
+
+  <a href="/blog/lando/" class="post-card__image" tabindex="-1" aria-hidden="true">
+    
+      <img src="/assets/img/posts/postlando.png" alt="Configuracion de LANDO para un proyecto Drupal" loading="lazy">
+    
+  </a>
+
+  <div class="post-card__body">
+    
+      <div class="post-card__categories">
+        
+          <span class="badge badge--tech">drupal</span>
+        
+          <span class="badge badge--tech">lando</span>
+        
+      </div>
+    
+
+    <h2 class="post-card__title">
+      <a href="/blog/lando/">Configuracion de LANDO para un proyecto Drupal</a>
+    </h2>
+
+    <p class="post-card__excerpt">Configuracion de lando para un proyecto Drupal</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">21 Dec 2024</span>
+      <span class="post-card__read-time">1 min</span>
+    </div>
+  </div>
+</article>
+
+        
+      </div>
+    
+
+    <div class="blog-pagination" id="blog-pagination"></div>
+
+    <p class="blog-no-results" id="blog-no-results" hidden>
+      No hay posts en esta categoría.
+    </p>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var grid      = document.getElementById('blog-grid');
+  var countEl   = document.getElementById('blog-results-count');
+  var noResults = document.getElementById('blog-no-results');
+  var filters   = document.getElementById('blog-filters');
+  var paginator = document.getElementById('blog-pagination');
+  var cards     = grid ? Array.from(grid.querySelectorAll('.post-card')) : [];
+
+  var activeFilter = 'all';
+  var PAGE_SIZE    = 9;
+  var currentPage  = 1;
+
+  function getFiltered() {
+    return cards.filter(function (card) {
+      var cats = card.getAttribute('data-categories') || '';
+      return activeFilter === 'all' || cats.split(',').indexOf(activeFilter) !== -1;
+    });
+  }
+
+  function applyFilters(resetPage) {
+    if (resetPage) currentPage = 1;
+
+    var filtered   = getFiltered();
+    var total      = filtered.length;
+    var totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    var start     = (currentPage - 1) * PAGE_SIZE;
+    var pageCards = filtered.slice(start, start + PAGE_SIZE);
+
+    cards.forEach(function (card) {
+      card.hidden = pageCards.indexOf(card) === -1;
+    });
+
+    if (countEl) countEl.textContent = total + ' post' + (total !== 1 ? 's' : '');
+    if (noResults) noResults.hidden = total > 0 || activeFilter === 'all';
+
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages) {
+    if (!paginator) return;
+    if (totalPages <= 1) { paginator.innerHTML = ''; return; }
+
+    var prev = currentPage - 1;
+    var next = currentPage + 1;
+
+    var html = '<nav class="pagination" aria-label="Páginas del blog">';
+    html += btn('pagination__arrow', prev, currentPage === 1,
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>',
+      'Anterior');
+
+    pageNumbers(currentPage, totalPages).forEach(function (p) {
+      if (p === '…') {
+        html += '<span class="pagination__ellipsis" aria-hidden="true">…</span>';
+      } else {
+        var active = p === currentPage;
+        html += btn('pagination__page' + (active ? ' is-active' : ''), p, false, String(p), 'Página ' + p, active ? 'page' : '');
+      }
+    });
+
+    html += btn('pagination__arrow', next, currentPage === totalPages,
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>',
+      'Siguiente');
+
+    html += '</nav>';
+    paginator.innerHTML = html;
+  }
+
+  function btn(cls, page, disabled, inner, label, current) {
+    return '<button class="' + cls + '" data-page="' + page + '"' +
+      (disabled ? ' disabled' : '') +
+      ' aria-label="' + label + '"' +
+      (current ? ' aria-current="' + current + '"' : '') +
+      '>' + inner + '</button>';
+  }
+
+  function pageNumbers(cur, total) {
+    if (total <= 7) {
+      var r = [];
+      for (var i = 1; i <= total; i++) r.push(i);
+      return r;
+    }
+    var result = [1];
+    if (cur > 3) result.push('…');
+    for (var p = Math.max(2, cur - 1); p <= Math.min(total - 1, cur + 1); p++) result.push(p);
+    if (cur < total - 2) result.push('…');
+    result.push(total);
+    return result;
+  }
+
+  if (paginator) {
+    paginator.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-page]');
+      if (!btn || btn.disabled) return;
+      var page = parseInt(btn.getAttribute('data-page'), 10);
+      if (page < 1 || page === currentPage) return;
+      currentPage = page;
+      applyFilters(false);
+      if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  if (filters) {
+    filters.addEventListener('click', function (e) {
+      var btn = e.target.closest('.blog-filter');
+      if (!btn) return;
+      filters.querySelectorAll('.blog-filter').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      activeFilter = btn.getAttribute('data-filter');
+      applyFilters(true);
+    });
+  }
+
+  // Activar filtro desde ?category=
+  var catParam = new URLSearchParams(window.location.search).get('category');
+  if (catParam && filters) {
+    var target = filters.querySelector('[data-filter="' + catParam + '"]');
+    if (target) {
+      filters.querySelector('.is-active').classList.remove('is-active');
+      target.classList.add('is-active');
+      activeFilter = catParam;
+    }
+  }
+
+  applyFilters(false);
+})();
+</script>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      Diseñado &amp; construido por
+      <a href="#inicio">Maycol Sánchez</a>
+      &mdash; 2026
+    </p>
+    <div class="footer-social">
+      
+        
+          <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            GitHub
+          </a>
+        
+      
+        
+          <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            LinkedIn
+          </a>
+        
+      
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+
+    a {
+      color: var(--color-primary);
+      font-weight: var(--weight-medium);
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: var(--space-lg);
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      font-weight: var(--weight-medium);
+      transition: color var(--transition-fast);
+
+      &:hover { color: var(--color-primary); }
+    }
+  }
+</style>
+
+
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);" aria-hidden="true">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+      <line x1="14" y1="4" x2="10" y2="20"/>
+    </svg>
+  </button>
+
+  <script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>

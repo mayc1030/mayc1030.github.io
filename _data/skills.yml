@@ -1,0 +1,45 @@
+- category: "Lenguajes de Programación"
+  category_en: "Programming Languages"
+  skills:
+    - { name: "PHP",        level: 4 }
+    - { name: "JavaScript", level: 3 }
+    - { name: "Java",       level: 3 }
+    - { name: "Python",     level: 3 }
+
+- category: "Diseño Web"
+  category_en: "Web Design"
+  skills:
+    - { name: "HTML",      level: 4 }
+    - { name: "CSS",       level: 2 }
+    - { name: "jQuery",    level: 4 }
+    - { name: "Bootstrap", level: 3 }
+
+- category: "Base de Datos"
+  category_en: "Databases"
+  skills:
+    - { name: "MySQL",      level: 4 }
+    - { name: "PostgreSQL", level: 3 }
+    - { name: "Oracle",     level: 2 }
+
+- category: "Framework Web"
+  category_en: "Web Frameworks"
+  skills:
+    - { name: "Symphony", level: 4 }
+    - { name: "Django",   level: 2 }
+    - { name: "Laravel",  level: 2 }
+    - { name: "Angular",  level: 2 }
+    - { name: "React",    level: 1 }
+
+- category: "CMS"
+  category_en: "CMS"
+  skills:
+    - { name: "Drupal",    level: 4 }
+    - { name: "Strapi",    level: 3 }
+    - { name: "WordPress", level: 2 }
+
+- category: "Otros"
+  category_en: "Others"
+  skills:
+    - { name: "Git",        level: 4 }
+    - { name: "Photoshop",  level: 3 }
+    - { name: "Docker",     level: 2 }

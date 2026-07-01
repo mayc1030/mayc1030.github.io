@@ -1,0 +1,60 @@
+<div class="timeline-item scroll-reveal" role="listitem">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">
+        <span data-lang-es>{{ include.job.role }}</span>
+        {% if include.job.role_en %}
+          <span data-lang-en>{{ include.job.role_en }}</span>
+        {% else %}
+          <span data-lang-en>{{ include.job.role }}</span>
+        {% endif %}
+      </h3>
+      <p class="timeline-item__company">
+        {{ include.job.company }}
+        {% if include.job.current %}
+          <span class="badge badge--skill" style="margin-left: var(--space-xs);" data-i18n="badge.current">Actual</span>
+        {% endif %}
+      </p>
+      {% if include.job.url and include.job.url != "" %}
+        <a class="timeline-item__url" href="{{ include.job.url }}" target="_blank" rel="noopener noreferrer">
+          {{ include.job.url }}
+        </a>
+      {% endif %}
+    </div>
+    <span class="timeline-item__period">
+      <span data-lang-es>{{ include.job.period }}</span>
+      {% if include.job.period_en %}
+        <span data-lang-en>{{ include.job.period_en }}</span>
+      {% else %}
+        <span data-lang-en>{{ include.job.period }}</span>
+      {% endif %}
+    </span>
+  </div>
+
+  {% if include.job.achievements.size > 0 %}
+    <ul class="timeline-item__achievements" data-lang-es>
+      {% for achievement in include.job.achievements %}
+        <li>{{ achievement }}</li>
+      {% endfor %}
+    </ul>
+    <ul class="timeline-item__achievements" data-lang-en>
+      {% if include.job.achievements_en %}
+        {% for achievement in include.job.achievements_en %}
+          <li>{{ achievement }}</li>
+        {% endfor %}
+      {% else %}
+        {% for achievement in include.job.achievements %}
+          <li>{{ achievement }}</li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  {% endif %}
+
+  {% if include.job.tech.size > 0 %}
+    <div class="timeline-item__tech">
+      {% for tech in include.job.tech %}
+        <span class="badge badge--tech">{{ tech }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,21 @@
+<section class="site-section site-section--alt" id="experiencia" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="experience-title">
+        <span data-lang-es><span>Experiencia</span></span>
+        <span data-lang-en><span>Experience</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="exp.subtitle">Mi trayectoria profesional y los proyectos en los que he trabajado.</p>
+    </div>
+
+    {% if site.data.experience.size > 0 %}
+      <div class="timeline" role="list">
+        {% for job in site.data.experience %}
+          {% include components/timeline-item.html job=job %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="section-empty" data-i18n="section.empty">Próximamente.</p>
+    {% endif %}
+  </div>
+</section>

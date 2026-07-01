@@ -1,0 +1,37 @@
+{% assign words = include.post.content | number_of_words %}
+{% assign read_time = words | divided_by: 200 %}
+{% if read_time < 1 %}{% assign read_time = 1 %}{% endif %}
+
+<article class="post-card"
+  data-search="{{ include.post.title | downcase }} {{ include.post.excerpt | strip_html | downcase }} {{ include.post.categories | join: ' ' | downcase }} {{ include.post.tags | join: ' ' | downcase }}"
+  data-categories="{{ include.post.categories | join: ',' | downcase }}">
+
+  <a href="{{ include.post.url }}" class="post-card__image{% unless include.post.image and include.post.image != '' %} post-card__image--placeholder{% endunless %}" tabindex="-1" aria-hidden="true">
+    {% if include.post.image and include.post.image != "" %}
+      <img src="{{ include.post.image | relative_url }}" alt="{{ include.post.title }}" loading="lazy">
+    {% else %}
+      <span>{{ include.post.emoji | default: "📝" }}</span>
+    {% endif %}
+  </a>
+
+  <div class="post-card__body">
+    {% if include.post.categories.size > 0 %}
+      <div class="post-card__categories">
+        {% for cat in include.post.categories %}
+          <span class="badge badge--tech">{{ cat }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <h2 class="post-card__title">
+      <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+    </h2>
+
+    <p class="post-card__excerpt">{{ include.post.excerpt | strip_html | truncatewords: 25 }}</p>
+
+    <div class="post-card__footer">
+      <span class="post-card__date">{{ include.post.date | date: "%d %b %Y" }}</span>
+      <span class="post-card__read-time">{{ read_time }} min</span>
+    </div>
+  </div>
+</article>

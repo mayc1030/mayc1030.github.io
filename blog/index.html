@@ -1,0 +1,188 @@
+---
+layout: default
+title: "Blog"
+description: "Artículos sobre desarrollo web, Drupal, JavaScript y tecnología."
+permalink: /blog/
+---
+
+<section class="blog-page">
+  <div class="container">
+
+    <div class="blog-page__header">
+      <h1 class="section-title">Blog<span>.</span></h1>
+      <p class="section-subtitle">Aprendizajes, tutoriales y reflexiones sobre desarrollo web.</p>
+    </div>
+
+    {% assign all_categories = "" %}
+    {% for post in site.posts %}
+      {% for cat in post.categories %}
+        {% unless all_categories contains cat %}
+          {% assign all_categories = all_categories | append: cat | append: "," %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    {% assign category_list = all_categories | split: "," | uniq | compact %}
+
+    {% if category_list.size > 0 %}
+      <div class="blog-filters" id="blog-filters">
+        <button class="blog-filter is-active" data-filter="all">Todos</button>
+        {% for cat in category_list %}
+          {% if cat != "" %}
+            <button class="blog-filter" data-filter="{{ cat | downcase }}">{{ cat }}</button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <p class="blog-results-count" id="blog-results-count" aria-live="polite">
+      {{ site.posts.size }} post{% if site.posts.size != 1 %}s{% endif %}
+    </p>
+
+    {% if site.posts.size > 0 %}
+      <div class="blog-grid" id="blog-grid">
+        {% for post in site.posts %}
+          {% include components/post-card.html post=post %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="section-empty">Próximamente — el blog está en construcción.</p>
+    {% endif %}
+
+    <div class="blog-pagination" id="blog-pagination"></div>
+
+    <p class="blog-no-results" id="blog-no-results" hidden>
+      No hay posts en esta categoría.
+    </p>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var grid      = document.getElementById('blog-grid');
+  var countEl   = document.getElementById('blog-results-count');
+  var noResults = document.getElementById('blog-no-results');
+  var filters   = document.getElementById('blog-filters');
+  var paginator = document.getElementById('blog-pagination');
+  var cards     = grid ? Array.from(grid.querySelectorAll('.post-card')) : [];
+
+  var activeFilter = 'all';
+  var PAGE_SIZE    = 9;
+  var currentPage  = 1;
+
+  function getFiltered() {
+    return cards.filter(function (card) {
+      var cats = card.getAttribute('data-categories') || '';
+      return activeFilter === 'all' || cats.split(',').indexOf(activeFilter) !== -1;
+    });
+  }
+
+  function applyFilters(resetPage) {
+    if (resetPage) currentPage = 1;
+
+    var filtered   = getFiltered();
+    var total      = filtered.length;
+    var totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    var start     = (currentPage - 1) * PAGE_SIZE;
+    var pageCards = filtered.slice(start, start + PAGE_SIZE);
+
+    cards.forEach(function (card) {
+      card.hidden = pageCards.indexOf(card) === -1;
+    });
+
+    if (countEl) countEl.textContent = total + ' post' + (total !== 1 ? 's' : '');
+    if (noResults) noResults.hidden = total > 0 || activeFilter === 'all';
+
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages) {
+    if (!paginator) return;
+    if (totalPages <= 1) { paginator.innerHTML = ''; return; }
+
+    var prev = currentPage - 1;
+    var next = currentPage + 1;
+
+    var html = '<nav class="pagination" aria-label="Páginas del blog">';
+    html += btn('pagination__arrow', prev, currentPage === 1,
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>',
+      'Anterior');
+
+    pageNumbers(currentPage, totalPages).forEach(function (p) {
+      if (p === '…') {
+        html += '<span class="pagination__ellipsis" aria-hidden="true">…</span>';
+      } else {
+        var active = p === currentPage;
+        html += btn('pagination__page' + (active ? ' is-active' : ''), p, false, String(p), 'Página ' + p, active ? 'page' : '');
+      }
+    });
+
+    html += btn('pagination__arrow', next, currentPage === totalPages,
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>',
+      'Siguiente');
+
+    html += '</nav>';
+    paginator.innerHTML = html;
+  }
+
+  function btn(cls, page, disabled, inner, label, current) {
+    return '<button class="' + cls + '" data-page="' + page + '"' +
+      (disabled ? ' disabled' : '') +
+      ' aria-label="' + label + '"' +
+      (current ? ' aria-current="' + current + '"' : '') +
+      '>' + inner + '</button>';
+  }
+
+  function pageNumbers(cur, total) {
+    if (total <= 7) {
+      var r = [];
+      for (var i = 1; i <= total; i++) r.push(i);
+      return r;
+    }
+    var result = [1];
+    if (cur > 3) result.push('…');
+    for (var p = Math.max(2, cur - 1); p <= Math.min(total - 1, cur + 1); p++) result.push(p);
+    if (cur < total - 2) result.push('…');
+    result.push(total);
+    return result;
+  }
+
+  if (paginator) {
+    paginator.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-page]');
+      if (!btn || btn.disabled) return;
+      var page = parseInt(btn.getAttribute('data-page'), 10);
+      if (page < 1 || page === currentPage) return;
+      currentPage = page;
+      applyFilters(false);
+      if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  if (filters) {
+    filters.addEventListener('click', function (e) {
+      var btn = e.target.closest('.blog-filter');
+      if (!btn) return;
+      filters.querySelectorAll('.blog-filter').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      activeFilter = btn.getAttribute('data-filter');
+      applyFilters(true);
+    });
+  }
+
+  // Activar filtro desde ?category=
+  var catParam = new URLSearchParams(window.location.search).get('category');
+  if (catParam && filters) {
+    var target = filters.querySelector('[data-filter="' + catParam + '"]');
+    if (target) {
+      filters.querySelector('.is-active').classList.remove('is-active');
+      target.classList.add('is-active');
+      activeFilter = catParam;
+    }
+  }
+
+  applyFilters(false);
+})();
+</script>

@@ -1,0 +1,13 @@
+{% assign base_ms = include.skill_index | times: 120 %}
+<div class="skill-item">
+  <span class="skill-item__name">{{ include.skill.name }}</span>
+  <div class="skill-item__stars" role="img" aria-label="{{ include.skill.level }} de 5 estrellas">
+    {% for i in (1..5) %}
+      {% assign star_ms = forloop.index0 | times: 70 %}
+      {% assign total_ms = base_ms | plus: star_ms %}
+      <span class="skill-item__star{% if i <= include.skill.level %} skill-item__star--filled{% endif %}"
+            style="--delay: {{ total_ms }}ms"
+            aria-hidden="true">★</span>
+    {% endfor %}
+  </div>
+</div>

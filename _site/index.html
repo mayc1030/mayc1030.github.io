@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');
+      if(t) document.documentElement.setAttribute('data-theme',t);
+      if(l) document.documentElement.setAttribute('data-lang',l);
+    })();
+  </script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Portfolio | Maycol Sánchez — Desarrollador Web</title>
+<meta name="description" content="Portfolio profesional de Maycol Sánchez — Desarrollador Web Full Stack especializado en React y Jekyll.">
+<meta name="author" content="Maycol Sánchez">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Portfolio | Maycol Sánchez — Desarrollador Web">
+<meta property="og:description" content="Portfolio profesional de Maycol Sánchez — Desarrollador Web Full Stack especializado en React y Jekyll.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayc1030.github.io/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maycol Sánchez — Desarrollador Web">
+<meta name="twitter:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://mayc1030.github.io/">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- Dark mode: leer preferencia antes de pintar para evitar flash -->
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', stored || preferred);
+  })();
+</script>
+
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Portfolio | Maycol Sánchez — Desarrollador Web</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Portfolio" />
+<meta name="author" content="Maycol Sánchez" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Portfolio profesional de Maycol Sánchez — Desarrollador Web Full Stack especializado en React y Jekyll." />
+<meta name="twitter:description" property="og:description" content="Portfolio profesional de Maycol Sánchez — Desarrollador Web Full Stack especializado en React y Jekyll." />
+<link rel="canonical" href="https://mayc1030.github.io/" />
+<meta property="og:url" content="https://mayc1030.github.io/" />
+<meta property="og:site_name" content="Maycol Sánchez — Desarrollador Web" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Portfolio" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Maycol Sánchez"},"description":"Portfolio profesional de Maycol Sánchez — Desarrollador Web Full Stack especializado en React y Jekyll.","headline":"Portfolio","name":"Maycol Sánchez — Desarrollador Web","url":"https://mayc1030.github.io/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <div class="site-loader__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <p class="site-loader__name">Maycol<span>.</span></p>
+    <div class="site-loader__bar"><span></span></div>
+  </div>
+
+  <header class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <a href="/" class="site-logo" aria-label="Inicio">
+      Maycol<span>.</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="/#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="/#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="/#skills" data-i18n="nav.skills">Skills</a>
+      <a href="/#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="/blog/" data-i18n="nav.blog" >Blog</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="search-btn" id="search-btn" aria-label="Buscar" title="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+
+      <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Change language" title="Cambiar idioma">
+        <span class="lang-toggle__es">ES</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__en">EN</span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar posts" hidden>
+  <div class="search-overlay__backdrop"></div>
+  <div class="search-overlay__panel">
+    <div class="search-overlay__input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="search-overlay__icon">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-overlay-input"
+        class="search-overlay__input"
+        placeholder="Buscar posts..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Buscar posts">
+      <button class="search-overlay__close" id="search-overlay-close" aria-label="Cerrar búsqueda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <span style="font-size:.7rem;font-weight:600;opacity:.6;line-height:1">ESC</span>
+      </button>
+    </div>
+    <div class="search-overlay__results" id="search-overlay-results" role="list" aria-live="polite"></div>
+  </div>
+</div>
+
+
+  <main id="main-content" role="main">
+    <section class="hero" id="inicio" aria-label="Presentación y Perfil profesional">
+  <div class="container">
+    <div class="hero__grid">
+
+      <!-- Columna Izquierda: Foto + Quick Facts (Sticky visual anchor) -->
+      <aside class="hero__visual">
+        <div class="hero__avatar">
+          
+            <img src="/assets/images/profile.jpg" alt="Foto de Maycol Sánchez Salazar" loading="eager" width="340" height="340">
+          
+        </div>
+
+        <div class="hero__facts" role="list">
+          <!-- Ubicación -->
+          
+            <div class="hero__fact-item" role="listitem">
+              <div class="hero__fact-icon" title="Ubicación / Location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="hero__fact-text">
+                <span>Manizales - Caldas - Colombia</span>
+              </div>
+            </div>
+          
+
+          <!-- Celular -->
+          
+            <div class="hero__fact-item" role="listitem">
+              <div class="hero__fact-icon" title="Teléfono / Celular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="hero__fact-text">
+                <a href="https://wa.me/573194100343" target="_blank" rel="noopener noreferrer">
+                  (+57) 319 410 0343
+                </a>
+              </div>
+            </div>
+          
+
+          <!-- Correo Electrónico -->
+          
+            <div class="hero__fact-item" role="listitem">
+              <div class="hero__fact-icon" title="Correo electrónico / Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="hero__fact-text">
+                <a href="mailto:mayc1030@gmail.com" title="Enviar correo">
+                  mayc1030@gmail.com
+                </a>
+              </div>
+            </div>
+          
+
+          <!-- Redes Sociales -->
+          
+            
+              
+                <div class="hero__fact-item" role="listitem">
+                  <div class="hero__fact-icon" title="GitHub">
+                    
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  </svg>
+
+
+                  </div>
+                  <div class="hero__fact-text">
+                    <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="hero__fact-item" role="listitem">
+                  <div class="hero__fact-icon" title="LinkedIn">
+                    
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+  </svg>
+
+
+                  </div>
+                  <div class="hero__fact-text">
+                    <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+              
+            
+          
+
+          <!-- Descargar CV -->
+          <div class="hero__fact-item" role="listitem">
+            <div class="hero__fact-icon" title="Descargar CV / Download CV">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              </svg>
+            </div>
+            <div class="hero__fact-text">
+              <a href="/assets/docs/MAYCOL_SANCHEZ_SALAZAR.pdf" download="MAYCOL_SANCHEZ_SALAZAR.pdf">
+                <span data-lang-es>Descargar CV (PDF)</span>
+                <span data-lang-en>Download CV (PDF)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Columna Derecha: Narrativa y Tesis -->
+      <div class="hero__content">
+
+        <h1 class="hero__title">
+          <span>Maycol Sánchez Salazar</span>
+        </h1>
+
+        <p class="hero__role">
+          <span data-lang-es>Ingeniero en Sistemas y Computación</span>
+          <span data-lang-en>Systems and Computer Engineer</span>
+        </p>
+
+        <!-- Ancla invisible para navegación hacia 'Sobre mí' -->
+        <div id="sobre-mi" class="hero__anchor"></div>
+
+        <div class="hero__narrative">
+          <div data-lang-es>
+            <p>Poseo una buena capacidad de análisis, lo que me permite abordar desafíos desde distintos enfoques y desarrollar soluciones eficientes según el contexto. Complemento este enfoque con una actitud pro-activa hacia la investigación y el auto-aprendizaje, herramientas clave para adaptarme al cambio y crecer profesionalmente.</p>
+
+<p>Me destaco por mi habilidad para establecer relaciones interpersonales sólidas y trabajar en equipo de forma efectiva, valorando la colaboración como medio para potenciar resultados y enriquecer el aprendizaje mutuo.</p>
+
+<p>Soy una persona responsable, comprometida y con un fuerte deseo de superación. En cada proyecto, doy lo mejor de mí para cumplir objetivos claros, adaptarme a nuevos retos y aportar valor con entusiasmo, puntualidad y ética. Creo firmemente que el desarrollo profesional se basa tanto en el conocimiento como en la actitud y la disposición para aprender y contribuir.</p>
+
+          </div>
+          <div data-lang-en>
+            <p>I have strong analytical skills that allow me to approach challenges from different angles and develop efficient solutions depending on the context. I complement this with a proactive attitude toward research and self-learning, key tools for adapting to change and growing professionally.</p>
+
+<p>I stand out for my ability to build strong interpersonal relationships and work effectively in teams, valuing collaboration as a means to enhance results and enrich mutual learning.</p>
+
+<p>I am a responsible, committed person with a strong desire for self-improvement. In every project, I give my best to meet clear objectives, adapt to new challenges, and add value with enthusiasm, punctuality, and ethics. I firmly believe that professional development is based as much on knowledge as on attitude and willingness to learn and contribute.</p>
+
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#proyectos" class="btn btn--primary btn--lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <span data-i18n="hero.btn.projects">Ver proyectos</span>
+          </a>
+          <a href="#contacto" class="btn btn--ghost btn--lg">
+            <span data-i18n="hero.btn.contact">Contactar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="site-section site-section--alt" id="experiencia" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="experience-title">
+        <span data-lang-es><span>Experiencia</span></span>
+        <span data-lang-en><span>Experience</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="exp.subtitle">Mi trayectoria profesional y los proyectos en los que he trabajado.</p>
+    </div>
+
+    
+      <div class="timeline" role="list">
+        
+          <div class="timeline-item scroll-reveal" role="listitem">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">
+        <span data-lang-es>Desarrollador Full Stack</span>
+        
+          <span data-lang-en>Full Stack Developer</span>
+        
+      </h3>
+      <p class="timeline-item__company">
+        150 por Ciento
+        
+      </p>
+      
+        <a class="timeline-item__url" href="https://150porciento.com" target="_blank" rel="noopener noreferrer">
+          https://150porciento.com
+        </a>
+      
+    </div>
+    <span class="timeline-item__period">
+      <span data-lang-es>11 Agosto 2025 — 3 Junio 2026</span>
+      
+        <span data-lang-en>August 11, 2025 — June 3, 2026</span>
+      
+    </span>
+  </div>
+
+  
+    <ul class="timeline-item__achievements" data-lang-es>
+      
+        <li>Arquitectura y Soluciones: Lideré el diseño y desarrollo de soluciones backend escalables en PHP/Drupal 10 y frontends modernos para clientes corporativos estratégicos.</li>
+      
+        <li>Integración y Calidad: Estructuré endpoints RESTful de alto rendimiento y lideré revisiones técnicas (code reviews) y pruebas unitarias para garantizar máxima estabilidad.</li>
+      
+    </ul>
+    <ul class="timeline-item__achievements" data-lang-en>
+      
+        
+          <li>Architecture & Solutions: Led the design and development of scalable PHP/Drupal 10 backend solutions and modern frontends for strategic corporate clients.</li>
+        
+          <li>Integration & Quality: Structured high-performance RESTful endpoints and led technical code reviews and unit testing to ensure maximum stability.</li>
+        
+      
+    </ul>
+  
+
+  
+    <div class="timeline-item__tech">
+      
+        <span class="badge badge--tech">Drupal 10</span>
+      
+        <span class="badge badge--tech">PHP 8</span>
+      
+        <span class="badge badge--tech">React</span>
+      
+        <span class="badge badge--tech">REST APIs</span>
+      
+        <span class="badge badge--tech">Git</span>
+      
+        <span class="badge badge--tech">Docker</span>
+      
+        <span class="badge badge--tech">MySQL</span>
+      
+    </div>
+  
+</div>
+
+        
+          <div class="timeline-item scroll-reveal" role="listitem">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">
+        <span data-lang-es>Desarrollador Full Stack</span>
+        
+          <span data-lang-en>Full Stack Developer</span>
+        
+      </h3>
+      <p class="timeline-item__company">
+        Serempre
+        
+      </p>
+      
+        <a class="timeline-item__url" href="https://www.serempre.com" target="_blank" rel="noopener noreferrer">
+          https://www.serempre.com
+        </a>
+      
+    </div>
+    <span class="timeline-item__period">
+      <span data-lang-es>17 Febrero 2020 — 21 Marzo 2025</span>
+      
+        <span data-lang-en>February 17, 2020 — March 21, 2025</span>
+      
+    </span>
+  </div>
+
+  
+    <ul class="timeline-item__achievements" data-lang-es>
+      
+        <li>Portales de Alto Tráfico (AB InBev): Lideré el desarrollo técnico de plataformas para marcas multinacionales (Bavaria, Poker, Club Colombia), asegurando estabilidad ante picos de +150,000 usuarios mensuales.</li>
+      
+        <li>Arquitecturas Headless: Diseñé e implementé soluciones desacopladas con Drupal y Strapi + React/Angular, reduciendo los tiempos de carga en un 35%.</li>
+      
+        <li>Integraciones y Microservicios: Desarrollé herramientas internas en Django (Python) y creé +20 módulos custom para integraciones críticas con pasarelas de pago y CRMs vía REST.</li>
+      
+        <li>DevOps & Contenedores: Implementé entornos dockerizados, reduciendo en un 25% el tiempo de onboarding técnico del equipo.</li>
+      
+    </ul>
+    <ul class="timeline-item__achievements" data-lang-en>
+      
+        
+          <li>High-Traffic Portals (AB InBev): Led technical development of platforms for multinational brands (Bavaria, Poker, Club Colombia), ensuring stability during traffic spikes of +150,000 monthly users.</li>
+        
+          <li>Headless Architectures: Designed and implemented decoupled solutions with Drupal and Strapi + React/Angular, reducing page load times by 35%.</li>
+        
+          <li>Integrations & Microservices: Developed internal tools in Django (Python) and created +20 custom modules for critical REST integrations with payment gateways and CRMs.</li>
+        
+          <li>DevOps & Containers: Implemented containerized Docker environments, reducing team onboarding time by 25%.</li>
+        
+      
+    </ul>
+  
+
+  
+    <div class="timeline-item__tech">
+      
+        <span class="badge badge--tech">Drupal 8/9</span>
+      
+        <span class="badge badge--tech">Strapi</span>
+      
+        <span class="badge badge--tech">Django</span>
+      
+        <span class="badge badge--tech">React</span>
+      
+        <span class="badge badge--tech">Angular</span>
+      
+        <span class="badge badge--tech">Docker</span>
+      
+        <span class="badge badge--tech">REST APIs</span>
+      
+        <span class="badge badge--tech">MySQL</span>
+      
+    </div>
+  
+</div>
+
+        
+          <div class="timeline-item scroll-reveal" role="listitem">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">
+        <span data-lang-es>Desarrollador Backend</span>
+        
+          <span data-lang-en>Backend Developer</span>
+        
+      </h3>
+      <p class="timeline-item__company">
+        Ariadna Communications Group
+        
+      </p>
+      
+        <a class="timeline-item__url" href="https://www.ariadnacommunicationsgroup.com" target="_blank" rel="noopener noreferrer">
+          https://www.ariadnacommunicationsgroup.com
+        </a>
+      
+    </div>
+    <span class="timeline-item__period">
+      <span data-lang-es>22 Mayo 2019 — 14 Febrero 2020</span>
+      
+        <span data-lang-en>May 22, 2019 — February 14, 2020</span>
+      
+    </span>
+  </div>
+
+  
+    <ul class="timeline-item__achievements" data-lang-es>
+      
+        <li>Motor de Reservas (Palace Resorts): Lideré el backend transaccional de la cadena hotelera, optimizando consultas relacionales e integrando APIs de aerolíneas y pasarelas de pago.</li>
+      
+        <li>Impacto en Negocio: Reduje la tasa de abandono en reservas en un 18% y agilicé las revisiones de código del equipo en un 20% estandarizando arquitectura SOLID/OOP.</li>
+      
+    </ul>
+    <ul class="timeline-item__achievements" data-lang-en>
+      
+        
+          <li>Booking Engine (Palace Resorts): Led the transactional backend for the hotel chain, optimizing relational database queries and integrating airline APIs and payment gateways.</li>
+        
+          <li>Business Impact: Reduced booking abandonment rate by 18% and accelerated team code reviews by 20% by standardizing SOLID/OOP architecture.</li>
+        
+      
+    </ul>
+  
+
+  
+    <div class="timeline-item__tech">
+      
+        <span class="badge badge--tech">Drupal 8</span>
+      
+        <span class="badge badge--tech">PHP</span>
+      
+        <span class="badge badge--tech">MySQL</span>
+      
+        <span class="badge badge--tech">REST APIs</span>
+      
+        <span class="badge badge--tech">Git</span>
+      
+    </div>
+  
+</div>
+
+        
+          <div class="timeline-item scroll-reveal" role="listitem">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">
+        <span data-lang-es>Desarrollador Backend</span>
+        
+          <span data-lang-en>Backend Developer</span>
+        
+      </h3>
+      <p class="timeline-item__company">
+        SeedEM
+        
+      </p>
+      
+        <a class="timeline-item__url" href="https://www.seedem.co" target="_blank" rel="noopener noreferrer">
+          https://www.seedem.co
+        </a>
+      
+    </div>
+    <span class="timeline-item__period">
+      <span data-lang-es>15 Agosto 2016 — 21 Mayo 2019</span>
+      
+        <span data-lang-en>August 15, 2016 — May 21, 2019</span>
+      
+    </span>
+  </div>
+
+  
+    <ul class="timeline-item__achievements" data-lang-es>
+      
+        <li>Desarrollo Corporativo: Creé plataformas web y sistemas de información para Almacenes Éxito, Surtimax y Holcim en Drupal 7/8.</li>
+      
+        <li>Refactorización: Reduje en un 30% el tiempo de procesamiento de formularios y deuda técnica en sistemas heredados mediante módulos customizados y temas dinámicos (Twig).</li>
+      
+    </ul>
+    <ul class="timeline-item__achievements" data-lang-en>
+      
+        
+          <li>Corporate Development: Built web platforms and information systems for Almacenes Éxito, Surtimax, and Holcim using Drupal 7/8.</li>
+        
+          <li>Refactoring: Reduced form processing time and technical debt in legacy systems by 30% through custom modules and dynamic Twig themes.</li>
+        
+      
+    </ul>
+  
+
+  
+    <div class="timeline-item__tech">
+      
+        <span class="badge badge--tech">Drupal 7/8</span>
+      
+        <span class="badge badge--tech">PHP</span>
+      
+        <span class="badge badge--tech">Twig</span>
+      
+        <span class="badge badge--tech">JavaScript</span>
+      
+        <span class="badge badge--tech">Git</span>
+      
+    </div>
+  
+</div>
+
+        
+          <div class="timeline-item scroll-reveal" role="listitem">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">
+        <span data-lang-es>Desarrollador Full Stack</span>
+        
+          <span data-lang-en>Full Stack Developer</span>
+        
+      </h3>
+      <p class="timeline-item__company">
+        Eureka Inmobiliaria
+        
+      </p>
+      
+        <a class="timeline-item__url" href="https://www.eurekainmobiliaria.com.co" target="_blank" rel="noopener noreferrer">
+          https://www.eurekainmobiliaria.com.co
+        </a>
+      
+    </div>
+    <span class="timeline-item__period">
+      <span data-lang-es>21 Enero 2016 — 11 Agosto 2016</span>
+      
+        <span data-lang-en>January 21, 2016 — August 11, 2016</span>
+      
+    </span>
+  </div>
+
+  
+    <ul class="timeline-item__achievements" data-lang-es>
+      
+        <li>Automatización CRM & SEO: Desarrollé servicios web para integrar leads con Vtiger CRM (+22% en conversión) e implementé mejoras en SEO técnico (+40% visitas orgánicas).</li>
+      
+    </ul>
+    <ul class="timeline-item__achievements" data-lang-en>
+      
+        
+          <li>CRM & SEO Automation: Developed web services to integrate lead capture with Vtiger CRM (+22% conversion rate) and implemented technical SEO enhancements (+40% organic traffic).</li>
+        
+      
+    </ul>
+  
+
+  
+    <div class="timeline-item__tech">
+      
+        <span class="badge badge--tech">WordPress</span>
+      
+        <span class="badge badge--tech">PHP</span>
+      
+        <span class="badge badge--tech">Vtiger CRM</span>
+      
+        <span class="badge badge--tech">MySQL</span>
+      
+        <span class="badge badge--tech">SEO</span>
+      
+    </div>
+  
+</div>
+
+        
+      </div>
+    
+  </div>
+</section>
+
+<section class="site-section" id="proyectos" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="projects-title">
+        <span data-lang-es>Mis <span>proyectos</span></span>
+        <span data-lang-en>My <span>projects</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="proj.subtitle">Una selección de los proyectos que he construido o en los que he contribuido.</p>
+    </div>
+
+    
+    
+      <div class="projects-grid" id="projects-grid" role="list">
+        
+          <article class="project-card scroll-reveal" role="listitem">
+  
+    <a href="/proyectos/01-polla-mundialista/" class="project-card__image project-card__image--placeholder" aria-hidden="true" tabindex="-1">
+  
+    
+      <span aria-hidden="true">⚽</span>
+    
+
+    
+  </a>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      
+        <a href="/proyectos/01-polla-mundialista/">Polla Mundialista 2026</a>
+      
+    </h3>
+    <p class="project-card__description">Plataforma web Single-Page Application (SPA) para pronósticos y gestión en vivo de la Copa Mundial FIFA 2026. Arquitectura Frontend nativa con Vanilla JS y Backend Serverless en Supabase.</p>
+
+    
+      <div class="project-card__tech">
+        
+          <span class="badge badge--tech">Vanilla JS</span>
+        
+          <span class="badge badge--tech">Supabase</span>
+        
+          <span class="badge badge--tech">PostgreSQL</span>
+        
+          <span class="badge badge--tech">Jekyll</span>
+        
+          <span class="badge badge--tech">CSS3</span>
+        
+          <span class="badge badge--tech">Edge Functions</span>
+        
+      </div>
+    
+
+    <div class="project-card__actions">
+      
+        <a href="/proyectos/01-polla-mundialista/" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+      
+        <a href="https://msscodex.github.io/pollamundialista/" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+          Demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      
+      
+    </div>
+  </div>
+</article>
+
+        
+          <article class="project-card scroll-reveal" role="listitem">
+  
+    <a href="/proyectos/02-penalty-strike-3d/" class="project-card__image project-card__image--placeholder" aria-hidden="true" tabindex="-1">
+  
+    
+      <span aria-hidden="true">🎮</span>
+    
+
+    
+      <span class="badge badge--featured" style="position: absolute; top: var(--space-sm); right: var(--space-sm);" data-i18n="badge.featured">★ Destacado</span>
+    
+  </a>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      
+        <a href="/proyectos/02-penalty-strike-3d/">Penalty Strike 2026 (3D Web Game)</a>
+      
+    </h3>
+    <p class="project-card__description">Videojuego web 3D de tanda de penaltis con física de balística realista, control táctil por gestos y audio 100% sintetizado. Desarrollado con Vite, TypeScript, Three.js y Rapier.</p>
+
+    
+      <div class="project-card__tech">
+        
+          <span class="badge badge--tech">TypeScript</span>
+        
+          <span class="badge badge--tech">Three.js</span>
+        
+          <span class="badge badge--tech">Rapier 3D</span>
+        
+          <span class="badge badge--tech">Vite</span>
+        
+          <span class="badge badge--tech">GSAP</span>
+        
+          <span class="badge badge--tech">Web Audio API</span>
+        
+      </div>
+    
+
+    <div class="project-card__actions">
+      
+        <a href="/proyectos/02-penalty-strike-3d/" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+      
+      
+    </div>
+  </div>
+</article>
+
+        
+          <article class="project-card scroll-reveal" role="listitem">
+  
+    <a href="/proyectos/03-los-angeles-barber/" class="project-card__image project-card__image--placeholder" aria-hidden="true" tabindex="-1">
+  
+    
+      <span aria-hidden="true">💈</span>
+    
+
+    
+  </a>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      
+        <a href="/proyectos/03-los-angeles-barber/">Los Angeles Barber (Barbería Elegance)</a>
+      
+    </h3>
+    <p class="project-card__description">Plataforma web SPA de reservas en tiempo real y gestión empresarial para barberías premium. Construida con Vanilla JS, Supabase (PostgreSQL) y diseño Glassmorphism.</p>
+
+    
+      <div class="project-card__tech">
+        
+          <span class="badge badge--tech">Vanilla JS</span>
+        
+          <span class="badge badge--tech">Supabase</span>
+        
+          <span class="badge badge--tech">PostgreSQL</span>
+        
+          <span class="badge badge--tech">Jekyll</span>
+        
+          <span class="badge badge--tech">CSS3 Glassmorphism</span>
+        
+      </div>
+    
+
+    <div class="project-card__actions">
+      
+        <a href="/proyectos/03-los-angeles-barber/" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+      
+        <a href="https://losangelesbarberco.github.io/losangelesbarber" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+          Demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      
+      
+    </div>
+  </div>
+</article>
+
+        
+          <article class="project-card scroll-reveal" role="listitem">
+  
+    <a href="/proyectos/04-portfolio-personal/" class="project-card__image project-card__image--placeholder" aria-hidden="true" tabindex="-1">
+  
+    
+      <span aria-hidden="true">🌐</span>
+    
+
+    
+  </a>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      
+        <a href="/proyectos/04-portfolio-personal/">Portfolio Personal</a>
+      
+    </h3>
+    <p class="project-card__description">Sitio web de portafolio profesional construido con Jekyll y desplegado en GitHub Pages. Diseño minimalista con dark mode, tokens de diseño y arquitectura de componentes atómicos.</p>
+
+    
+      <div class="project-card__tech">
+        
+          <span class="badge badge--tech">Jekyll</span>
+        
+          <span class="badge badge--tech">SCSS</span>
+        
+          <span class="badge badge--tech">Liquid</span>
+        
+          <span class="badge badge--tech">GitHub Pages</span>
+        
+      </div>
+    
+
+    <div class="project-card__actions">
+      
+        <a href="/proyectos/04-portfolio-personal/" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+      
+        <a href="https://mayc1030.github.io" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+          Demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      
+      
+        <a href="https://mayc1030.github.io" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="btn.code">Código</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+      
+    </div>
+  </div>
+</article>
+
+        
+          <article class="project-card scroll-reveal" role="listitem">
+  
+    <a href="/proyectos/05-planificador-diario/" class="project-card__image project-card__image--placeholder" aria-hidden="true" tabindex="-1">
+  
+    
+      <span aria-hidden="true">📅</span>
+    
+
+    
+  </a>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      
+        <a href="/proyectos/05-planificador-diario/">Planificador Diario & Gestor de Tareas Pro</a>
+      
+    </h3>
+    <p class="project-card__description">Aplicación web SPA de productividad empresarial con analíticas en vivo (Chart.js), exportación multinivel en Excel/JSON y reportes corporativos en PDF.</p>
+
+    
+      <div class="project-card__tech">
+        
+          <span class="badge badge--tech">Vanilla JS</span>
+        
+          <span class="badge badge--tech">Bootstrap 5</span>
+        
+          <span class="badge badge--tech">Chart.js</span>
+        
+          <span class="badge badge--tech">SheetJS (Excel)</span>
+        
+          <span class="badge badge--tech">jsPDF</span>
+        
+          <span class="badge badge--tech">Obfuscator CI</span>
+        
+      </div>
+    
+
+    <div class="project-card__actions">
+      
+        <a href="/proyectos/05-planificador-diario/" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+      
+      
+    </div>
+  </div>
+</article>
+
+        
+          <article class="project-card scroll-reveal" role="listitem">
+  
+    <a href="/proyectos/06-ordux-pos-scanner/" class="project-card__image project-card__image--placeholder" aria-hidden="true" tabindex="-1">
+  
+    
+      <span aria-hidden="true">📱</span>
+    
+
+    
+      <span class="badge badge--featured" style="position: absolute; top: var(--space-sm); right: var(--space-sm);" data-i18n="badge.featured">★ Destacado</span>
+    
+  </a>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      
+        <a href="/proyectos/06-ordux-pos-scanner/">ORDUX POS & Scanner App (Móvil Android Offline-First)</a>
+      
+    </h3>
+    <p class="project-card__description">Sistema POS móvil e inventario con escaneo de código de barras, impresión térmica ESC/POS por Bluetooth/TCP y sincronización offline en Supabase.</p>
+
+    
+      <div class="project-card__tech">
+        
+          <span class="badge badge--tech">React 18</span>
+        
+          <span class="badge badge--tech">Capacitor 6</span>
+        
+          <span class="badge badge--tech">Vite</span>
+        
+          <span class="badge badge--tech">Supabase</span>
+        
+          <span class="badge badge--tech">IndexedDB</span>
+        
+          <span class="badge badge--tech">ESC/POS Bluetooth</span>
+        
+      </div>
+    
+
+    <div class="project-card__actions">
+      
+        <a href="/proyectos/06-ordux-pos-scanner/" class="btn btn--primary btn--sm">
+          <span data-lang-es>Ver proyecto</span>
+          <span data-lang-en>View project</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+      
+      
+    </div>
+  </div>
+</article>
+
+        
+      </div>
+      <div class="projects-pagination" id="projects-pagination"></div>
+    
+  </div>
+</section>
+
+<section class="site-section site-section--alt" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="skills-title">
+        <span data-lang-es>Mis <span>skills</span></span>
+        <span data-lang-en>My <span>skills</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologías y herramientas con las que trabajo en el día a día.</p>
+    </div>
+
+    
+      <div class="skills-categories">
+        
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>Lenguajes de Programación</span>
+              <span data-lang-en>Programming Languages</span>
+            </p>
+            <div class="skill-category__list">
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">PHP</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 0ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 70ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 140ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 210ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 280ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">JavaScript</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 120ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 190ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 260ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 330ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 400ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Java</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 240ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 310ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 380ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 450ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 520ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Python</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 360ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 430ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 500ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 570ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 640ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+            </div>
+          </div>
+        
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>Diseño Web</span>
+              <span data-lang-en>Web Design</span>
+            </p>
+            <div class="skill-category__list">
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">HTML</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 0ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 70ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 140ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 210ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 280ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">CSS</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 120ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 190ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 260ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 330ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 400ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">jQuery</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 240ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 310ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 380ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 450ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 520ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Bootstrap</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 360ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 430ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 500ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 570ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 640ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+            </div>
+          </div>
+        
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>Base de Datos</span>
+              <span data-lang-en>Databases</span>
+            </p>
+            <div class="skill-category__list">
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">MySQL</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 0ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 70ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 140ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 210ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 280ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">PostgreSQL</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 120ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 190ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 260ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 330ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 400ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Oracle</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 240ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 310ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 380ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 450ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 520ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+            </div>
+          </div>
+        
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>Framework Web</span>
+              <span data-lang-en>Web Frameworks</span>
+            </p>
+            <div class="skill-category__list">
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Symphony</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 0ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 70ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 140ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 210ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 280ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Django</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 120ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 190ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 260ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 330ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 400ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Laravel</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 240ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 310ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 380ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 450ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 520ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Angular</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 360ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 430ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 500ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 570ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 640ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">React</span>
+  <div class="skill-item__stars" role="img" aria-label="1 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 480ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 550ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 620ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 690ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 760ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+            </div>
+          </div>
+        
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>CMS</span>
+              <span data-lang-en>CMS</span>
+            </p>
+            <div class="skill-category__list">
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Drupal</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 0ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 70ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 140ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 210ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 280ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Strapi</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 120ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 190ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 260ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 330ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 400ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">WordPress</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 240ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 310ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 380ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 450ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 520ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+            </div>
+          </div>
+        
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>Otros</span>
+              <span data-lang-en>Others</span>
+            </p>
+            <div class="skill-category__list">
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Git</span>
+  <div class="skill-item__stars" role="img" aria-label="4 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 0ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 70ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 140ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 210ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 280ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Photoshop</span>
+  <div class="skill-item__stars" role="img" aria-label="3 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 120ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 190ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 260ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 330ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 400ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+                
+<div class="skill-item">
+  <span class="skill-item__name">Docker</span>
+  <div class="skill-item__stars" role="img" aria-label="2 de 5 estrellas">
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 240ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star skill-item__star--filled"
+            style="--delay: 310ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 380ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 450ms"
+            aria-hidden="true">★</span>
+    
+      
+      
+      <span class="skill-item__star"
+            style="--delay: 520ms"
+            aria-hidden="true">★</span>
+    
+  </div>
+</div>
+
+              
+            </div>
+          </div>
+        
+      </div>
+    
+  </div>
+</section>
+
+<section class="site-section" id="educacion" aria-labelledby="education-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="education-title">
+        <span data-lang-es><span>Educación</span></span>
+        <span data-lang-en><span>Education</span></span>
+      </h2>
+    </div>
+
+    
+      <div class="education-list">
+        
+          <article class="education-card scroll-reveal">
+            <h3 class="education-card__degree">
+              <span data-lang-es>Ingeniería en Sistemas y Computación</span>
+              
+                <span data-lang-en>Systems and Computer Engineering</span>
+              
+            </h3>
+            <p class="education-card__institution">Universidad de Caldas</p>
+            <p class="education-card__period">
+              <span data-lang-es>2010 — 2016</span>
+              
+                <span data-lang-en>2010 — 2016</span>
+              
+            </p>
+            
+          </article>
+        
+      </div>
+    
+  </div>
+</section>
+
+<section class="site-section site-section--alt" id="contacto" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-content">
+      <h2 class="section-title" id="contact-title">
+        <span data-lang-es>¿Hablamos<span>?</span></span>
+        <span data-lang-en>Let's <span>talk</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="contact.subtitle" style="margin-inline: auto; text-align: center;">
+        Estoy abierto a nuevas oportunidades, colaboraciones o simplemente una buena conversación sobre tecnología.
+      </p>
+
+      <div class="contact-details">
+        <a href="mailto:mayc1030@gmail.com"
+           class="contact-email"
+           id="email-copy"
+           title="Haz clic para copiar el email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          mayc1030@gmail.com
+        </a>
+
+        
+          <a href="https://wa.me/573194100343" target="_blank" rel="noopener noreferrer" class="contact-phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            (+57) 319 410 0343
+          </a>
+        
+
+        
+          <span class="contact-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Manizales - Caldas - Colombia
+          </span>
+        
+      </div>
+
+      
+        <div class="social-links">
+          
+            
+              <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  </svg>
+
+
+                GitHub
+              </a>
+            
+          
+            
+              <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+  </svg>
+
+
+                LinkedIn
+              </a>
+            
+          
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      Diseñado &amp; construido por
+      <a href="#inicio">Maycol Sánchez</a>
+      &mdash; 2026
+    </p>
+    <div class="footer-social">
+      
+        
+          <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            GitHub
+          </a>
+        
+      
+        
+          <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            LinkedIn
+          </a>
+        
+      
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+
+    a {
+      color: var(--color-primary);
+      font-weight: var(--weight-medium);
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: var(--space-lg);
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      font-weight: var(--weight-medium);
+      transition: color var(--transition-fast);
+
+      &:hover { color: var(--color-primary); }
+    }
+  }
+</style>
+
+
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);" aria-hidden="true">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+      <line x1="14" y1="4" x2="10" y2="20"/>
+    </svg>
+  </button>
+
+  <script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>

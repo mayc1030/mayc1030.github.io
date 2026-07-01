@@ -1,0 +1,293 @@
+[
+  
+    {
+      "title":      "Arquitectura de Videojuegos 3D en el Navegador con Three.js, Rapier y Web Audio",
+      "url":        "/blog/2026/07/01/desarrollo-videojuegos-3d-navegador-threejs-rapier/",
+      "date":       "01 Jul 2026",
+      "excerpt":    "Estudio de ingeniería detrás de Penalty Strike 2026: balística con efecto Magnus en WebAssembly, audio procedural sin assets y optimización extrema de carga.",
+      "categories": ["Desarrollo Web","Videojuegos 3D"],
+      "tags":       ["threejs","rapier","typescript","webaudio","vite","gamedev"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Generación de Reportes PDF y Excel al 100% en el Navegador para SPAs",
+      "url":        "/blog/2026/07/01/construccion-spas-analiticas-reportes-pdf-excel-client-side/",
+      "date":       "01 Jul 2026",
+      "excerpt":    "Cómo integrar jsPDF, AutoTable y SheetJS en aplicaciones de página única (SPA) sin depender de servidores backend, combinando seguridad y ofuscación.",
+      "categories": ["Desarrollo Web","Arquitectura"],
+      "tags":       ["vanillajs","jspdf","sheetjs","chartjs","obfuscator","nodejs"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Arquitectura Serverless y Vanilla JS en Polla Mundialista 2026",
+      "url":        "/blog/2026/07/01/arquitectura-y-desarrollo-polla-mundialista-2026/",
+      "date":       "01 Jul 2026",
+      "excerpt":    "Análisis técnico y lecciones de arquitectura tras construir una plataforma SPA de pronósticos en tiempo real para el Mundial FIFA 2026 usando Vanilla JS, Supabase y PostgreSQL.",
+      "categories": ["Desarrollo Web","JavaScript"],
+      "tags":       ["vanillajs","supabase","postgresql","serverless","jekyll"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Cómo construir un Sistema de Reservas SPA con Vanilla JS y Supabase",
+      "url":        "/blog/2026/07/01/arquitectura-spa-reservas-barberia-vanilla-js/",
+      "date":       "01 Jul 2026",
+      "excerpt":    "Estudio de caso sobre la arquitectura detrás de Los Angeles Barber: agendamiento en tiempo real, cálculo de disponibilidad y separación de interfaces sin frameworks.",
+      "categories": ["Desarrollo Web","Arquitectura"],
+      "tags":       ["vanillajs","supabase","postgresql","glassmorphism","spa"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Arquitectura Offline-First e Impresión Térmica ESC/POS por Bluetooth en Apps Móviles Híbridas",
+      "url":        "/blog/2026/07/01/arquitectura-offline-first-impresion-termica-bluetooth-capacitor-react/",
+      "date":       "01 Jul 2026",
+      "excerpt":    "Cómo construir un sistema POS móvil nativo para Android en React y Capacitor con sincronización en IndexedDB e impresión térmica sin drivers.",
+      "categories": ["Desarrollo Móvil","Arquitectura"],
+      "tags":       ["react","capacitor","android","bluetooth","escpos","offlinefirst","supabase"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Bienvenido a mi blog",
+      "url":        "/blog/2026/06/24/bienvenido-a-mi-blog/",
+      "date":       "24 Jun 2026",
+      "excerpt":    "Este es el primer post de mi blog. Aquí compartiré aprendizajes, tutoriales y reflexiones sobre desarrollo web, tecnología y todo lo que encuentre interesante en el camino.",
+      "categories": ["General"],
+      "tags":       ["blog","presentación"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Novedades de JavaScript ES2024 que debes conocer",
+      "url":        "/blog/2026/06/22/novedades-javascript-es2024/",
+      "date":       "22 Jun 2026",
+      "excerpt":    "ES2024 trae mejoras importantes al lenguaje. Repaso las características más útiles con ejemplos prácticos.",
+      "categories": ["JavaScript","Desarrollo Web"],
+      "tags":       ["javascript","es2024","frontend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Guía práctica de React Hooks en 2026",
+      "url":        "/blog/2026/06/18/guia-react-hooks/",
+      "date":       "18 Jun 2026",
+      "excerpt":    "useState, useEffect, useCallback y cuándo usar cada uno sin complicarte la vida.",
+      "categories": ["React","JavaScript"],
+      "tags":       ["react","hooks","frontend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "PHP 8.3: las características que más uso",
+      "url":        "/blog/2026/06/12/php-83-nuevas-caracteristicas/",
+      "date":       "12 Jun 2026",
+      "excerpt":    "Typed class constants, json_validate() y readonly en clases anónimas. Lo que realmente cambió mi flujo de trabajo.",
+      "categories": ["PHP"],
+      "tags":       ["php","php83","backend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Lo que aprendí trabajando con Drupal durante años",
+      "url":        "/blog/2026/06/10/mi-experiencia-con-drupal/",
+      "date":       "10 Jun 2026",
+      "excerpt":    "Drupal tiene fama de ser difícil. Después de años usándolo en producción, comparto lo que me hubiera gustado saber desde el principio.",
+      "categories": ["Drupal","Desarrollo Web"],
+      "tags":       ["drupal","php","cms","backend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "CSS Grid vs Flexbox: cuándo usar cada uno",
+      "url":        "/blog/2026/06/08/css-grid-vs-flexbox/",
+      "date":       "08 Jun 2026",
+      "excerpt":    "La regla simple que uso para decidir entre Grid y Flexbox sin pensarlo dos veces.",
+      "categories": ["Tutorial","Desarrollo Web"],
+      "tags":       ["css","grid","flexbox","frontend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Mi flujo de trabajo con Git en proyectos reales",
+      "url":        "/blog/2026/05/30/git-flujo-de-trabajo/",
+      "date":       "30 May 2026",
+      "excerpt":    "Cómo organizo ramas, commits y code reviews para no perder el hilo en proyectos con varios desarrolladores.",
+      "categories": ["General","Tutorial"],
+      "tags":       ["git","workflow","herramientas"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Drupal Views: más allá de lo básico",
+      "url":        "/blog/2026/05/25/drupal-views-guia-avanzada/",
+      "date":       "25 May 2026",
+      "excerpt":    "Relaciones, argumentos contextuales y caché de Views. Lo que no aprenderás en la documentación oficial.",
+      "categories": ["Drupal"],
+      "tags":       ["drupal","views","backend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Accesibilidad web: errores comunes y cómo corregirlos",
+      "url":        "/blog/2026/05/18/accesibilidad-web-mejores-practicas/",
+      "date":       "18 May 2026",
+      "excerpt":    "Los 5 errores de accesibilidad que aparecen en casi todos los proyectos y cómo solucionarlos en menos de una hora.",
+      "categories": ["Desarrollo Web","Tutorial"],
+      "tags":       ["accesibilidad","html","a11y"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Construyendo APIs REST con Node.js sin frameworks pesados",
+      "url":        "/blog/2026/05/12/apis-rest-con-nodejs/",
+      "date":       "12 May 2026",
+      "excerpt":    "Cómo estructuro APIs en Node.js con Express mínimo y sin dependencias innecesarias.",
+      "categories": ["JavaScript"],
+      "tags":       ["nodejs","api","rest","backend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Composer: gestión de dependencias PHP que todo dev debería dominar",
+      "url":        "/blog/2026/05/07/composer-gestion-dependencias-php/",
+      "date":       "07 May 2026",
+      "excerpt":    "Más allá del require básico. Scripts, autoloading y cómo mantener un composer.json limpio.",
+      "categories": ["PHP","Tutorial"],
+      "tags":       ["php","composer","backend","herramientas"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Optimización de rendimiento en React: lo que realmente importa",
+      "url":        "/blog/2026/04/28/react-performance-optimizacion/",
+      "date":       "28 Apr 2026",
+      "excerpt":    "Profiler, re-renders innecesarios y cuándo usar memo. Sin micro-optimizaciones que no cambian nada.",
+      "categories": ["React","JavaScript"],
+      "tags":       ["react","performance","frontend"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Migraciones en Drupal 10: de D7 a D10 sin morir en el intento",
+      "url":        "/blog/2026/04/20/migraciones-drupal-10/",
+      "date":       "20 Apr 2026",
+      "excerpt":    "Migrate API, fuentes personalizadas y cómo depurar migraciones que fallan silenciosamente.",
+      "categories": ["Drupal"],
+      "tags":       ["drupal","migraciones","backend","drupal10"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "SCSS: variables, mixins y cuándo usar custom properties de CSS",
+      "url":        "/blog/2026/04/14/scss-variables-y-mixins/",
+      "date":       "14 Apr 2026",
+      "excerpt":    "La diferencia práctica entre variables SCSS y CSS custom properties, y mixins que realmente ahorran tiempo.",
+      "categories": ["Tutorial","Desarrollo Web"],
+      "tags":       ["scss","css","frontend","tutorial"],
+      "image":      ""
+    },
+  
+    {
+      "title":      "Drupal",
+      "url":        "/blog/drupal/",
+      "date":       "29 Jan 2025",
+      "excerpt":    "Drupal",
+      "categories": ["drupal"],
+      "tags":       [],
+      "image":      "/assets/img/posts/postdrupal.png"
+    },
+  
+    {
+      "title":      "Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash",
+      "url":        "/blog/steamdeck/p3",
+      "date":       "24 Dec 2024",
+      "excerpt":    "Estos dos scripts están diseñados para gestionar enlaces simbólicos de ROMs en la Steam Deck para EmulationStation. Permiten organizar juegos almacenados en discos externos y sincronizarlos con la carpeta de EmulationStation sin necesidad de mover archivos.",
+      "categories": ["steamdeck","emulacion"],
+      "tags":       [],
+      "image":      "/assets/img/posts/poststeamdeckp1.png"
+    },
+  
+    {
+      "title":      "Creacion Automatizada de Enlaces Simbolicos de Roms, desde un Disco externo a carpeta de roms en SteamDeck",
+      "url":        "/blog/steamdeck/p2",
+      "date":       "24 Dec 2024",
+      "excerpt":    "Este script en Bash crea enlaces simbólicos para juegos en una carpeta específica de EmulationStation en Steam Deck.",
+      "categories": ["steamdeck","emulacion"],
+      "tags":       [],
+      "image":      "/assets/img/posts/poststeamdeckp1.png"
+    },
+  
+    {
+      "title":      "Listado de Juegos de Nintendo Switch Emulados por Yuzu en SteamDeck",
+      "url":        "/blog/steamdeck/p1",
+      "date":       "24 Dec 2024",
+      "excerpt":    "Juegos Compatibles en la SteamDeck mediante Yuzu",
+      "categories": ["steamdeck","emulacion"],
+      "tags":       [],
+      "image":      "/assets/img/posts/poststeamdeck.png"
+    },
+  
+    {
+      "title":      "Steamdeck",
+      "url":        "/blog/steamdeck/",
+      "date":       "24 Dec 2024",
+      "excerpt":    "Steamdeck",
+      "categories": ["steamdeck"],
+      "tags":       [],
+      "image":      "/assets/img/posts/poststeamdeck.png"
+    },
+  
+    {
+      "title":      "Nintendo Switch",
+      "url":        "/blog/nintendoswitch/",
+      "date":       "24 Dec 2024",
+      "excerpt":    "Nintendo Switch",
+      "categories": ["nintendo_switch"],
+      "tags":       [],
+      "image":      "/assets/img/posts/postnintendoswitch.png"
+    },
+  
+    {
+      "title":      "Batocera",
+      "url":        "/blog/batocera/",
+      "date":       "24 Dec 2024",
+      "excerpt":    "Batocera",
+      "categories": ["batocera"],
+      "tags":       [],
+      "image":      "/assets/img/posts/postbatocera.png"
+    },
+  
+    {
+      "title":      "Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git",
+      "url":        "/blog/validadciones-in-git-drupal/",
+      "date":       "23 Dec 2024",
+      "excerpt":    "Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git",
+      "categories": ["drupal","git"],
+      "tags":       [],
+      "image":      "/assets/img/posts/postgit.png"
+    },
+  
+    {
+      "title":      "Configuracion de DDEV para un proyecto Drupal",
+      "url":        "/blog/ddev/",
+      "date":       "22 Dec 2024",
+      "excerpt":    "Configuracion de ddev para un proyecto Drupal",
+      "categories": ["drupal","ddev"],
+      "tags":       [],
+      "image":      "/assets/img/posts/postddev.png"
+    },
+  
+    {
+      "title":      "Configuracion de LANDO para un proyecto Drupal",
+      "url":        "/blog/lando/",
+      "date":       "21 Dec 2024",
+      "excerpt":    "Configuracion de lando para un proyecto Drupal",
+      "categories": ["drupal","lando"],
+      "tags":       [],
+      "image":      "/assets/img/posts/postlando.png"
+    }
+  
+]

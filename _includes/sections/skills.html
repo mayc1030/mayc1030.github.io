@@ -1,0 +1,31 @@
+<section class="site-section site-section--alt" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="skills-title">
+        <span data-lang-es>Mis <span>skills</span></span>
+        <span data-lang-en>My <span>skills</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologías y herramientas con las que trabajo en el día a día.</p>
+    </div>
+
+    {% if site.data.skills.size > 0 %}
+      <div class="skills-categories">
+        {% for group in site.data.skills %}
+          <div class="skill-category">
+            <p class="skill-category__name">
+              <span data-lang-es>{{ group.category }}</span>
+              <span data-lang-en>{{ group.category_en }}</span>
+            </p>
+            <div class="skill-category__list">
+              {% for skill in group.skills %}
+                {% include components/skill-badge.html skill=skill skill_index=forloop.index0 %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="section-empty" data-i18n="section.empty">Próximamente.</p>
+    {% endif %}
+  </div>
+</section>

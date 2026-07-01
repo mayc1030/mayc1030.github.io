@@ -1,0 +1,45 @@
+title: "Maycol Sánchez — Desarrollador Web"
+description: "Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas."
+url: "https://mayc1030.github.io"
+baseurl: ""
+author:
+  name: "Maycol Sánchez"
+  email: "mayc1030@gmail.com"
+
+lang: es
+
+collections:
+  projects:
+    output: true
+    sort_by: order
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .git
+  - node_modules
+
+timezone: America/Bogota
+
+# Posts permalink → /blog/año/mes/dia/titulo/
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      layout: project
+      permalink: /proyectos/:name/

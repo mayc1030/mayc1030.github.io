@@ -1,0 +1,9 @@
+- name: "GitHub"
+  url: "https://github.com/mayc1030"
+  icon: "github"
+  username: "@mayc1030"
+
+- name: "LinkedIn"
+  url: "https://www.linkedin.com/in/maycol-sanchez-salazar"
+  icon: "linkedin"
+  username: "Maycol Sánchez Salazar"

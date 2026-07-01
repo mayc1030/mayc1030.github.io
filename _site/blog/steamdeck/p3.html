@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');
+      if(t) document.documentElement.setAttribute('data-theme',t);
+      if(l) document.documentElement.setAttribute('data-lang',l);
+    })();
+  </script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash | Maycol Sánchez — Desarrollador Web</title>
+<meta name="description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+<meta name="author" content="Maycol Sánchez">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash | Maycol Sánchez — Desarrollador Web">
+<meta property="og:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayc1030.github.io/blog/steamdeck/p3">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maycol Sánchez — Desarrollador Web">
+<meta name="twitter:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://mayc1030.github.io/blog/steamdeck/p3">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- Dark mode: leer preferencia antes de pintar para evitar flash -->
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', stored || preferred);
+  })();
+</script>
+
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash | Maycol Sánchez — Desarrollador Web</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash" />
+<meta name="author" content="mayc1030" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Estos dos scripts están diseñados para gestionar enlaces simbólicos de ROMs en la Steam Deck para EmulationStation. Permiten organizar juegos almacenados en discos externos y sincronizarlos con la carpeta de EmulationStation sin necesidad de mover archivos." />
+<meta name="twitter:description" property="og:description" content="Estos dos scripts están diseñados para gestionar enlaces simbólicos de ROMs en la Steam Deck para EmulationStation. Permiten organizar juegos almacenados en discos externos y sincronizarlos con la carpeta de EmulationStation sin necesidad de mover archivos." />
+<link rel="canonical" href="https://mayc1030.github.io/blog/steamdeck/p3" />
+<meta property="og:url" content="https://mayc1030.github.io/blog/steamdeck/p3" />
+<meta property="og:site_name" content="Maycol Sánchez — Desarrollador Web" />
+<meta property="og:image" content="https://mayc1030.github.io/assets/img/posts/poststeamdeckp1.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-24T00:00:00-05:00" />
+<meta property="article:modified_time" content="2024-12-24T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://mayc1030.github.io/assets/img/posts/poststeamdeckp1.png" />
+<meta name="twitter:title" content="Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"mayc1030"},"dateModified":"2024-12-24T00:00:00-05:00","datePublished":"2024-12-24T00:00:00-05:00","description":"Estos dos scripts están diseñados para gestionar enlaces simbólicos de ROMs en la Steam Deck para EmulationStation. Permiten organizar juegos almacenados en discos externos y sincronizarlos con la carpeta de EmulationStation sin necesidad de mover archivos.","headline":"Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash","image":"https://mayc1030.github.io/assets/img/posts/poststeamdeckp1.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://mayc1030.github.io/blog/steamdeck/p3"},"url":"https://mayc1030.github.io/blog/steamdeck/p3"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <div class="site-loader__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <p class="site-loader__name">Maycol<span>.</span></p>
+    <div class="site-loader__bar"><span></span></div>
+  </div>
+
+  <header class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <a href="/" class="site-logo" aria-label="Inicio">
+      Maycol<span>.</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="/#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="/#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="/#skills" data-i18n="nav.skills">Skills</a>
+      <a href="/#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="search-btn" id="search-btn" aria-label="Buscar" title="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+
+      <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Change language" title="Cambiar idioma">
+        <span class="lang-toggle__es">ES</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__en">EN</span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar posts" hidden>
+  <div class="search-overlay__backdrop"></div>
+  <div class="search-overlay__panel">
+    <div class="search-overlay__input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="search-overlay__icon">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-overlay-input"
+        class="search-overlay__input"
+        placeholder="Buscar posts..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Buscar posts">
+      <button class="search-overlay__close" id="search-overlay-close" aria-label="Cerrar búsqueda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <span style="font-size:.7rem;font-weight:600;opacity:.6;line-height:1">ESC</span>
+      </button>
+    </div>
+    <div class="search-overlay__results" id="search-overlay-results" role="list" aria-live="polite"></div>
+  </div>
+</div>
+
+
+  <main id="main-content" role="main">
+    <div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
+<article class="post-page">
+  <div class="container">
+
+    <div class="post-page__back">
+      <a href="/blog/" class="btn btn--ghost btn--sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Blog
+      </a>
+    </div>
+
+    <header class="post-page__header">
+      
+        <div class="post-page__categories">
+          
+            <a href="/blog/?category=steamdeck" class="badge badge--tech">steamdeck</a>
+          
+            <a href="/blog/?category=emulacion" class="badge badge--tech">emulacion</a>
+          
+        </div>
+      
+
+      <h1 class="post-page__title">Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash</h1>
+
+      <div class="post-page__meta">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          24 Dec 2024
+        </span>
+        
+        
+        
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          6 min de lectura
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-page__cover">
+        <img src="/assets/img/posts/poststeamdeckp1.png" alt="Gestión Automática de ROMs en Steam Deck: Creación y Limpieza de Enlaces Simbólicos con Bash" loading="lazy">
+      </div>
+    
+
+    <div class="post-content">
+      <h4 id="resumen-del-funcionamiento">Resumen del funcionamiento</h4>
+<ol>
+  <li>El script principal verifica qué discos están montados y elige el adecuado.</li>
+  <li>Llama al script auxiliar, que se encarga de crear los enlaces simbólicos.</li>
+  <li>Elimina enlaces simbólicos inválidos que apunten a discos no montados.</li>
+  <li>Sincroniza datos en la nube con EmuDeck.</li>
+  <li>Ejecuta EmulationStation para que reconozca los juegos correctamente.
+Este sistema permite mantener organizadas las ROMs en discos externos y acceder a ellas en EmulationStation sin necesidad de copiarlas manualmente.</li>
+</ol>
+
+<h4 id="primer-script-crear_enlacessh---script-principal">Primer script (crear_enlaces.sh - Script principal)</h4>
+<p>Este script automatiza la creación y limpieza de enlaces simbólicos para múltiples sistemas de juegos.</p>
+
+<ol>
+  <li>Selección de sistemas de juego
+    <ul>
+      <li>Define una lista de consolas compatibles <code class="language-plaintext highlighter-rouge">(Dreamcast, GameCube, GBA, PS2, etc.)</code>.</li>
+      <li>Si no se proporciona un argumento, el script procesa todas las consolas de la lista.</li>
+    </ul>
+  </li>
+  <li>Verificación de parámetros
+    <ul>
+      <li>Si se proporciona una consola específica como argumento, verifica que sea válida.</li>
+      <li>Si el nombre de la carpeta no coincide con los sistemas disponibles, muestra un error y termina la ejecución.</li>
+    </ul>
+  </li>
+  <li>Detección del disco de origen, define rutas de origen en dos posibles ubicaciones de almacenamiento externo:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">/run/media/deck/mayck/SteamLibrary/Emulation/roms</code></li>
+      <li><code class="language-plaintext highlighter-rouge">/run/media/deck/gamesd/steamapps/games/roms</code></li>
+      <li>Verifica cuál de estos discos está montado y elige el que esté disponible.</li>
+      <li>Si un disco está montado, ejecuta un script secundario (crear_enlaces.sh) con la carpeta correspondiente.</li>
+    </ul>
+  </li>
+  <li>Eliminación de enlaces simbólicos inválidos
+    <ul>
+      <li>Escanea la carpeta de enlaces de EmulationStation y elimina enlaces simbólicos que apunten a discos no montados.</li>
+      <li>Esto evita enlaces rotos cuando los discos externos no están conectados.</li>
+    </ul>
+  </li>
+  <li>Sincronización en la nube y ejecución de EmulationStation-DE
+    <ul>
+      <li>Ejecuta funciones de EmuDeck para sincronizar configuraciones desde la nube.</li>
+      <li>Finalmente, ejecuta EmulationStation-DE <code class="language-plaintext highlighter-rouge">($ESDE_toolPath)</code> con los parámetros recibidos.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Contenido en archivo .sh:</strong></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c"># Opciones disponibles para TEXTO</span>
+<span class="nv">TEXTO_OPCIONES</span><span class="o">=(</span><span class="s2">"dreamcast"</span> <span class="s2">"gamecube"</span> <span class="s2">"gb"</span> <span class="s2">"gba"</span> <span class="s2">"gbc"</span> <span class="s2">"n64"</span> <span class="s2">"nds"</span> <span class="s2">"nes"</span> <span class="s2">"ps2"</span> <span class="s2">"ps3"</span> <span class="s2">"psp"</span> <span class="s2">"psvita"</span> <span class="s2">"psx"</span> <span class="s2">"switch"</span> <span class="s2">"xbox"</span> <span class="s2">"xbox360"</span><span class="o">)</span>
+
+<span class="c"># Si no se pasa un argumento, se asignan todas las opciones</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nv">TEXTO_OPCIONES_SELECCIONADAS</span><span class="o">=(</span><span class="s2">"</span><span class="k">${</span><span class="nv">TEXTO_OPCIONES</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="o">)</span>
+<span class="k">else
+  </span><span class="nv">TEXTO_OPCIONES_SELECCIONADAS</span><span class="o">=(</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="o">)</span>
+<span class="k">fi</span>
+
+<span class="c"># Recorrer todas las opciones seleccionadas</span>
+<span class="k">for </span>TEXTO <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">TEXTO_OPCIONES_SELECCIONADAS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
+  <span class="c"># Verificar si el valor de TEXTO es válido</span>
+  <span class="k">if</span> <span class="o">[[</span> <span class="o">!</span> <span class="s2">" </span><span class="k">${</span><span class="nv">TEXTO_OPCIONES</span><span class="p">[@]</span><span class="k">}</span><span class="s2"> "</span> <span class="o">=</span>~ <span class="s2">" </span><span class="k">${</span><span class="nv">TEXTO</span><span class="k">}</span><span class="s2"> "</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Error: TEXTO debe ser uno de los siguientes: </span><span class="k">${</span><span class="nv">TEXTO_OPCIONES</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+    <span class="nb">exit </span>1
+  <span class="k">fi
+
+  </span><span class="nv">SYMLINK_FOLDER</span><span class="o">=</span><span class="s2">"/home/deck/Emulation/roms/</span><span class="nv">$TEXTO</span><span class="s2">"</span>
+  <span class="nv">DISK_MOUNTS</span><span class="o">=(</span><span class="s2">"/run/media/deck/mayck"</span> <span class="s2">"/run/media/deck/gamesd"</span><span class="o">)</span>
+  <span class="nv">ORIGEN_ROMS</span><span class="o">=(</span><span class="s2">"/run/media/deck/mayck/SteamLibrary/Emulation/roms"</span> <span class="s2">"/run/media/deck/gamesd/steamapps/games/roms"</span><span class="o">)</span>
+
+  <span class="c"># Verificar si la carpeta de enlaces simbólicos existe</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$SYMLINK_FOLDER</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Carpeta </span><span class="nv">$SYMLINK_FOLDER</span><span class="s2"> no existe. Omitiendo..."</span>
+    <span class="k">continue
+  fi
+
+  </span><span class="nv">DISK_FOUND</span><span class="o">=</span><span class="nb">false</span>
+
+  <span class="c"># Recorrer las rutas de montaje y verificar si alguna está activa</span>
+  <span class="k">for </span>i <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="p">!DISK_MOUNTS[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+    if </span>mount | <span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"</span><span class="k">${</span><span class="nv">DISK_MOUNTS</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">then
+      </span><span class="nv">DISK_FOUND</span><span class="o">=</span><span class="nb">true
+      echo</span> <span class="s2">"Usando origen: </span><span class="k">${</span><span class="nv">ORIGEN_ROMS</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+      bash /home/deck/Emulation/tools/launchers/es-de/crear_enlaces.sh <span class="s2">"</span><span class="k">${</span><span class="nv">ORIGEN_ROMS</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$TEXTO</span><span class="s2">"</span>
+    <span class="k">fi
+  done</span>
+
+  <span class="c"># Verificar y eliminar enlaces simbólicos que no pertenezcan a discos montados</span>
+  <span class="nb">echo</span> <span class="s2">"Verificando enlaces simbólicos en </span><span class="nv">$SYMLINK_FOLDER</span><span class="s2">..."</span>
+
+  <span class="c"># Usar `find` para obtener todos los enlaces simbólicos y verificar sus destinos</span>
+  find <span class="s2">"</span><span class="nv">$SYMLINK_FOLDER</span><span class="s2">"</span> <span class="nt">-type</span> l | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> symlink<span class="p">;</span> <span class="k">do
+    </span><span class="nv">target</span><span class="o">=</span><span class="si">$(</span><span class="nb">readlink</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$symlink</span><span class="s2">"</span><span class="si">)</span>
+
+    <span class="c"># Verificar si el destino del enlace pertenece a un disco montado</span>
+    <span class="nv">LINK_VALID</span><span class="o">=</span><span class="nb">false
+    </span><span class="k">for </span>mount <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">DISK_MOUNTS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+      if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$target</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"</span><span class="nv">$mount</span><span class="s2">"</span><span class="k">*</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">LINK_VALID</span><span class="o">=</span><span class="nb">true
+        break
+      </span><span class="k">fi
+    done</span>
+
+    <span class="c"># Si el enlace simbólico no es válido, eliminarlo</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$LINK_VALID</span><span class="s2">"</span> <span class="o">=</span> <span class="nb">false</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+      </span><span class="nb">echo</span> <span class="s2">"Eliminando </span><span class="nv">$symlink</span><span class="s2"> (apunta a </span><span class="nv">$target</span><span class="s2">, disco no montado)"</span>
+      <span class="nb">rm</span> <span class="s2">"</span><span class="nv">$symlink</span><span class="s2">"</span>
+    <span class="k">fi
+  done
+
+  </span><span class="nb">echo</span> <span class="s2">"Proceso completado para </span><span class="nv">$TEXTO</span><span class="s2">."</span>
+<span class="k">done
+
+
+
+</span><span class="nb">source</span> <span class="nv">$HOME</span>/.config/EmuDeck/backend/functions/all.sh
+cloud_sync_downloadEmuAll <span class="o">&amp;&amp;</span> cloud_sync_startService
+<span class="s2">"</span><span class="nv">$ESDE_toolPath</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="p">@</span><span class="k">}</span><span class="s2">"</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> <span class="s2">"</span><span class="nv">$savesPath</span><span class="s2">/.gaming"</span>
+</code></pre></div></div>
+
+<h4 id="segundo-script-crear_enlacessh---script-auxiliar">Segundo script (crear_enlaces.sh - Script auxiliar)</h4>
+<p>Este script se encarga de crear los enlaces simbólicos en la carpeta de EmulationStation para un sistema específico.</p>
+
+<ol>
+  <li>Verificación de parámetros, recibe dos argumentos:
+    <ul>
+      <li><strong><em>Ruta de origen</em></strong> (ubicación de las ROMs en el disco externo).</li>
+      <li><strong><em>Sistema de juego</em></strong> (nombre de la carpeta de destino en EmulationStation).</li>
+      <li>Si falta alguno de estos valores, muestra un error y termina la ejecución.</li>
+    </ul>
+  </li>
+  <li>Creación de la carpeta de destino
+    <ul>
+      <li>Si la carpeta de destino en EmulationStation no existe, la crea.</li>
+    </ul>
+  </li>
+  <li>Creación de enlaces simbólicos
+    <ul>
+      <li>Recorre todos los archivos en la carpeta de origen y crea un enlace simbólico en la carpeta de destino.</li>
+      <li>Si un enlace ya existe, lo omite para evitar duplicados.</li>
+      <li>Cuenta cuántos enlaces nuevos fueron creados.</li>
+    </ul>
+  </li>
+  <li>Mensaje final
+    <ul>
+      <li>Si se crearon enlaces nuevos, muestra un mensaje de confirmación.</li>
+      <li>Si todos los enlaces ya existían, indica que no fue necesario hacer cambios.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Contenido en archivo .sh:</strong></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c"># Verificar si se recibieron los parámetros necesarios</span>
+<span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"Error: Se requieren dos parámetros."</span> <span class="o">&amp;&amp;</span> <span class="nb">exit </span>1
+
+<span class="c"># Definir variables</span>
+<span class="nv">ORIGEN</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="nv">DESTINO</span><span class="o">=</span><span class="s2">"/home/deck/Emulation/roms/</span><span class="nv">$2</span><span class="s2">"</span>
+
+<span class="c"># Verificar si la carpeta de origen existe</span>
+<span class="o">[</span> <span class="o">!</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$ORIGEN</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"La carpeta de origen </span><span class="nv">$ORIGEN</span><span class="s2"> no existe. Saliendo..."</span> <span class="o">&amp;&amp;</span> <span class="nb">exit </span>1
+
+<span class="c"># Crear la carpeta de destino si no existe</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$DESTINO</span><span class="s2">"</span>
+
+<span class="c"># Crear enlaces simbólicos solo si no existen</span>
+<span class="nv">NUEVOS_ENLACES</span><span class="o">=</span>0
+
+<span class="k">for </span>ARCHIVO <span class="k">in</span> <span class="s2">"</span><span class="nv">$ORIGEN</span><span class="s2">"</span>/<span class="k">*</span><span class="p">;</span> <span class="k">do</span>
+  <span class="o">[</span> <span class="nt">-e</span> <span class="s2">"</span><span class="nv">$ARCHIVO</span><span class="s2">"</span> <span class="o">]</span> <span class="o">||</span> <span class="k">continue</span>  <span class="c"># Saltar si no hay archivos</span>
+  <span class="nv">ENLACE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$DESTINO</span><span class="s2">/</span><span class="si">$(</span><span class="nb">basename</span> <span class="s2">"</span><span class="nv">$ARCHIVO</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span>
+  <span class="o">[</span> <span class="nt">-L</span> <span class="s2">"</span><span class="nv">$ENLACE</span><span class="s2">"</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">ln</span> <span class="nt">-s</span> <span class="s2">"</span><span class="nv">$ARCHIVO</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$ENLACE</span><span class="s2">"</span> <span class="o">&amp;&amp;</span> <span class="nv">NUEVOS_ENLACES</span><span class="o">=</span>1
+<span class="k">done</span>
+
+<span class="c"># Mensaje final</span>
+<span class="o">[</span> <span class="s2">"</span><span class="nv">$NUEVOS_ENLACES</span><span class="s2">"</span> <span class="nt">-eq</span> 1 <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"Enlaces creados en </span><span class="nv">$DESTINO</span><span class="s2">."</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"Todos los enlaces ya existen."</span>
+</code></pre></div></div>
+
+
+    </div>
+
+    
+
+    
+
+
+
+
+
+<div class="share-bar">
+  <span class="share-bar__label" data-i18n="share.label">Compartir</span>
+  <div class="share-bar__links">
+
+    <a class="share-btn share-btn--whatsapp"
+       href="https://wa.me/?text=Gesti%C3%B3n+Autom%C3%A1tica+de+ROMs+en+Steam+Deck%3A+Creaci%C3%B3n+y+Limpieza+de+Enlaces+Simb%C3%B3licos+con+Bash+https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fsteamdeck%2Fp3"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--facebook"
+       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fsteamdeck%2Fp3"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--linkedin"
+       href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fsteamdeck%2Fp3"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--x"
+       href="https://x.com/intent/tweet?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fsteamdeck%2Fp3&text=Gesti%C3%B3n+Autom%C3%A1tica+de+ROMs+en+Steam+Deck%3A+Creaci%C3%B3n+y+Limpieza+de+Enlaces+Simb%C3%B3licos+con+Bash"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en X">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+
+    <button class="share-btn share-btn--copy"
+            data-share-copy="https://mayc1030.github.io/blog/steamdeck/p3"
+            aria-label="Copiar enlace">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>
+    </button>
+
+  </div>
+</div>
+
+
+    <nav class="post-page__nav" aria-label="Navegación entre posts">
+      
+        <a href="/blog/steamdeck/p2" class="post-page__nav-link post-page__nav-link--prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>
+            <small>Anterior</small>
+            <strong>Creacion Automatizada de Enlaces Simbolicos de Roms, desde un Disco externo a carpeta de roms en SteamDeck</strong>
+          </span>
+        </a>
+      
+
+      
+        <a href="/blog/drupal/" class="post-page__nav-link post-page__nav-link--next">
+          <span>
+            <small>Siguiente</small>
+            <strong>Drupal</strong>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      
+    </nav>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      Diseñado &amp; construido por
+      <a href="#inicio">Maycol Sánchez</a>
+      &mdash; 2026
+    </p>
+    <div class="footer-social">
+      
+        
+          <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            GitHub
+          </a>
+        
+      
+        
+          <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            LinkedIn
+          </a>
+        
+      
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+
+    a {
+      color: var(--color-primary);
+      font-weight: var(--weight-medium);
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: var(--space-lg);
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      font-weight: var(--weight-medium);
+      transition: color var(--transition-fast);
+
+      &:hover { color: var(--color-primary); }
+    }
+  }
+</style>
+
+
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);" aria-hidden="true">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+      <line x1="14" y1="4" x2="10" y2="20"/>
+    </svg>
+  </button>
+
+  <script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>

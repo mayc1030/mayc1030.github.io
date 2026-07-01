@@ -1,0 +1,102 @@
+.timeline {
+  position: relative;
+  padding-left: var(--space-2xl);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: var(--space-sm);
+    bottom: var(--space-sm);
+    width: 2px;
+    background-color: var(--color-border);
+    border-radius: var(--radius-full);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-3xl);
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-2xl) + var(--space-2xs));
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-surface);
+    box-shadow: 0 0 0 2px var(--color-primary);
+    transition: transform var(--transition-base);
+  }
+
+  &:hover::before {
+    transform: scale(1.3);
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  &__role {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-text);
+    line-height: var(--leading-tight);
+  }
+
+  &__period {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    font-weight: var(--weight-medium);
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  &__company {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  &__achievements {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    li {
+      position: relative;
+      padding-left: var(--space-lg);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+
+      &::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+        font-weight: var(--weight-bold);
+      }
+    }
+  }
+
+  &__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+  }
+}

@@ -1,0 +1,287 @@
+.site-section {
+  padding-block: var(--section-padding-y);
+
+  &--alt {
+    background-color: var(--color-surface-alt);
+  }
+}
+
+#educacion,
+#proyectos,
+.hero {
+  background-image: radial-gradient(var(--color-border) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  background-position: center;
+}
+
+.section-header {
+  margin-bottom: var(--space-3xl);
+}
+
+// Hero
+.hero {
+  padding-block: var(--space-4xl) calc(var(--space-4xl) + var(--space-2xl));
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-primary-light) 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-lg);
+  }
+
+  &__title {
+    font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+    font-weight: var(--weight-extrabold);
+    line-height: var(--leading-tight);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__description {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    max-width: 580px;
+    margin-bottom: var(--space-2xl);
+    line-height: var(--leading-relaxed);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    &__description {
+      font-size: var(--text-lg);
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+  }
+}
+
+// About
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-3xl);
+  align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-avatar {
+  aspect-ratio: 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__placeholder {
+    font-size: var(--text-6xl);
+    color: var(--color-primary);
+  }
+}
+
+.about-text {
+  p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-md);
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
+
+.about-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Projects grid
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Skills grid
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.skill-category {
+  &__name {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-md);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+}
+
+// Education
+.education-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.education-card {
+  padding: var(--space-xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  &__degree {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__institution {
+    font-size: var(--text-base);
+    color: var(--color-primary);
+    font-weight: var(--weight-medium);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__period {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+}
+
+// Contact
+.contact-content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  padding: var(--space-md) var(--space-xl);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  margin-block: var(--space-xl);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
+}

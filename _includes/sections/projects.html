@@ -1,0 +1,23 @@
+<section class="site-section" id="proyectos" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="projects-title">
+        <span data-lang-es>Mis <span>proyectos</span></span>
+        <span data-lang-en>My <span>projects</span></span>
+      </h2>
+      <p class="section-subtitle" data-i18n="proj.subtitle">Una selección de los proyectos que he construido o en los que he contribuido.</p>
+    </div>
+
+    {% assign all_projects = site.projects %}
+    {% if all_projects.size > 0 %}
+      <div class="projects-grid" id="projects-grid" role="list">
+        {% for project in all_projects %}
+          {% include components/project-card.html project=project %}
+        {% endfor %}
+      </div>
+      <div class="projects-pagination" id="projects-pagination"></div>
+    {% else %}
+      <p class="section-empty" data-i18n="section.empty">Próximamente.</p>
+    {% endif %}
+  </div>
+</section>

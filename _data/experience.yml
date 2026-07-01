@@ -1,0 +1,76 @@
+- company: "150 por Ciento"
+  url: "https://150porciento.com"
+  role: "Desarrollador Full Stack"
+  role_en: "Full Stack Developer"
+  period: "11 Agosto 2025 — 3 Junio 2026"
+  period_en: "August 11, 2025 — June 3, 2026"
+  current: false
+  achievements:
+    - "Arquitectura y Soluciones: Lideré el diseño y desarrollo de soluciones backend escalables en PHP/Drupal 10 y frontends modernos para clientes corporativos estratégicos."
+    - "Integración y Calidad: Estructuré endpoints RESTful de alto rendimiento y lideré revisiones técnicas (code reviews) y pruebas unitarias para garantizar máxima estabilidad."
+  achievements_en:
+    - "Architecture & Solutions: Led the design and development of scalable PHP/Drupal 10 backend solutions and modern frontends for strategic corporate clients."
+    - "Integration & Quality: Structured high-performance RESTful endpoints and led technical code reviews and unit testing to ensure maximum stability."
+  tech: ["Drupal 10", "PHP 8", "React", "REST APIs", "Git", "Docker", "MySQL"]
+
+- company: "Serempre"
+  url: "https://www.serempre.com"
+  role: "Desarrollador Full Stack"
+  role_en: "Full Stack Developer"
+  period: "17 Febrero 2020 — 21 Marzo 2025"
+  period_en: "February 17, 2020 — March 21, 2025"
+  current: false
+  achievements:
+    - "Portales de Alto Tráfico (AB InBev): Lideré el desarrollo técnico de plataformas para marcas multinacionales (Bavaria, Poker, Club Colombia), asegurando estabilidad ante picos de +150,000 usuarios mensuales."
+    - "Arquitecturas Headless: Diseñé e implementé soluciones desacopladas con Drupal y Strapi + React/Angular, reduciendo los tiempos de carga en un 35%."
+    - "Integraciones y Microservicios: Desarrollé herramientas internas en Django (Python) y creé +20 módulos custom para integraciones críticas con pasarelas de pago y CRMs vía REST."
+    - "DevOps & Contenedores: Implementé entornos dockerizados, reduciendo en un 25% el tiempo de onboarding técnico del equipo."
+  achievements_en:
+    - "High-Traffic Portals (AB InBev): Led technical development of platforms for multinational brands (Bavaria, Poker, Club Colombia), ensuring stability during traffic spikes of +150,000 monthly users."
+    - "Headless Architectures: Designed and implemented decoupled solutions with Drupal and Strapi + React/Angular, reducing page load times by 35%."
+    - "Integrations & Microservices: Developed internal tools in Django (Python) and created +20 custom modules for critical REST integrations with payment gateways and CRMs."
+    - "DevOps & Containers: Implemented containerized Docker environments, reducing team onboarding time by 25%."
+  tech: ["Drupal 8/9", "Strapi", "Django", "React", "Angular", "Docker", "REST APIs", "MySQL"]
+
+- company: "Ariadna Communications Group"
+  url: "https://www.ariadnacommunicationsgroup.com"
+  role: "Desarrollador Backend"
+  role_en: "Backend Developer"
+  period: "22 Mayo 2019 — 14 Febrero 2020"
+  period_en: "May 22, 2019 — February 14, 2020"
+  current: false
+  achievements:
+    - "Motor de Reservas (Palace Resorts): Lideré el backend transaccional de la cadena hotelera, optimizando consultas relacionales e integrando APIs de aerolíneas y pasarelas de pago."
+    - "Impacto en Negocio: Reduje la tasa de abandono en reservas en un 18% y agilicé las revisiones de código del equipo en un 20% estandarizando arquitectura SOLID/OOP."
+  achievements_en:
+    - "Booking Engine (Palace Resorts): Led the transactional backend for the hotel chain, optimizing relational database queries and integrating airline APIs and payment gateways."
+    - "Business Impact: Reduced booking abandonment rate by 18% and accelerated team code reviews by 20% by standardizing SOLID/OOP architecture."
+  tech: ["Drupal 8", "PHP", "MySQL", "REST APIs", "Git"]
+
+- company: "SeedEM"
+  url: "https://www.seedem.co"
+  role: "Desarrollador Backend"
+  role_en: "Backend Developer"
+  period: "15 Agosto 2016 — 21 Mayo 2019"
+  period_en: "August 15, 2016 — May 21, 2019"
+  current: false
+  achievements:
+    - "Desarrollo Corporativo: Creé plataformas web y sistemas de información para Almacenes Éxito, Surtimax y Holcim en Drupal 7/8."
+    - "Refactorización: Reduje en un 30% el tiempo de procesamiento de formularios y deuda técnica en sistemas heredados mediante módulos customizados y temas dinámicos (Twig)."
+  achievements_en:
+    - "Corporate Development: Built web platforms and information systems for Almacenes Éxito, Surtimax, and Holcim using Drupal 7/8."
+    - "Refactoring: Reduced form processing time and technical debt in legacy systems by 30% through custom modules and dynamic Twig themes."
+  tech: ["Drupal 7/8", "PHP", "Twig", "JavaScript", "Git"]
+
+- company: "Eureka Inmobiliaria"
+  url: "https://www.eurekainmobiliaria.com.co"
+  role: "Desarrollador Full Stack"
+  role_en: "Full Stack Developer"
+  period: "21 Enero 2016 — 11 Agosto 2016"
+  period_en: "January 21, 2016 — August 11, 2016"
+  current: false
+  achievements:
+    - "Automatización CRM & SEO: Desarrollé servicios web para integrar leads con Vtiger CRM (+22% en conversión) e implementé mejoras en SEO técnico (+40% visitas orgánicas)."
+  achievements_en:
+    - "CRM & SEO Automation: Developed web services to integrate lead capture with Vtiger CRM (+22% conversion rate) and implemented technical SEO enhancements (+40% organic traffic)."
+  tech: ["WordPress", "PHP", "Vtiger CRM", "MySQL", "SEO"]

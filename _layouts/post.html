@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
+<article class="post-page">
+  <div class="container">
+
+    <div class="post-page__back">
+      <a href="/blog/" class="btn btn--ghost btn--sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Blog
+      </a>
+    </div>
+
+    <header class="post-page__header">
+      {% if page.categories.size > 0 %}
+        <div class="post-page__categories">
+          {% for cat in page.categories %}
+            <a href="/blog/?category={{ cat | slugify }}" class="badge badge--tech">{{ cat }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <h1 class="post-page__title">{{ page.title }}</h1>
+
+      <div class="post-page__meta">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          {{ page.date | date: "%d %b %Y" }}
+        </span>
+        {% assign words = content | number_of_words %}
+        {% assign read_time = words | divided_by: 200 %}
+        {% if read_time < 1 %}{% assign read_time = 1 %}{% endif %}
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          {{ read_time }} min de lectura
+        </span>
+      </div>
+    </header>
+
+    {% if page.image and page.image != "" %}
+      <div class="post-page__cover">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+      </div>
+    {% elsif page.emoji %}
+      <div class="post-page__emoji-cover" aria-hidden="true">{{ page.emoji }}</div>
+    {% endif %}
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.tags.size > 0 %}
+      <div class="post-page__tags">
+        {% for tag in page.tags %}
+          <span class="badge badge--skill"># {{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% include components/share-buttons.html %}
+
+    <nav class="post-page__nav" aria-label="Navegación entre posts">
+      {% if page.previous.url %}
+        <a href="{{ page.previous.url }}" class="post-page__nav-link post-page__nav-link--prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>
+            <small>Anterior</small>
+            <strong>{{ page.previous.title }}</strong>
+          </span>
+        </a>
+      {% else %}<div></div>{% endif %}
+
+      {% if page.next.url %}
+        <a href="{{ page.next.url }}" class="post-page__nav-link post-page__nav-link--next">
+          <span>
+            <small>Siguiente</small>
+            <strong>{{ page.next.title }}</strong>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      {% else %}<div></div>{% endif %}
+    </nav>
+
+  </div>
+</article>
