@@ -24,6 +24,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CLAUDE.md
+  - AGENTS.md
+  - .agents
   - .git
   - node_modules
 

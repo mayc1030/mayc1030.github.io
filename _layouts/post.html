@@ -34,7 +34,8 @@ layout: default
           </svg>
           {{ page.date | date: "%d %b %Y" }}
         </span>
-        {% assign words = content | number_of_words %}
+        {% assign safe_content = content | default: "" %}
+        {% assign words = safe_content | number_of_words %}
         {% assign read_time = words | divided_by: 200 %}
         {% if read_time < 1 %}{% assign read_time = 1 %}{% endif %}
         <span>
