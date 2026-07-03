@@ -20,7 +20,7 @@
 <meta property="og:title" content="Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git | Maycol Sánchez — Desarrollador Web">
 <meta property="og:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:4000/blog/validadciones-in-git-drupal/">
+<meta property="og:url" content="https://mayc1030.github.io/blog/validadciones-in-git-drupal/">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@
 <meta name="twitter:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
 
 <!-- Canonical -->
-<link rel="canonical" href="http://localhost:4000/blog/validadciones-in-git-drupal/">
+<link rel="canonical" href="https://mayc1030.github.io/blog/validadciones-in-git-drupal/">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <link rel="stylesheet" href="/assets/css/main.css">
 
 <!-- Dark mode: leer preferencia antes de pintar para evitar flash -->
@@ -55,18 +56,18 @@
 <meta property="og:locale" content="es" />
 <meta name="description" content="Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git" />
 <meta name="twitter:description" property="og:description" content="Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git" />
-<link rel="canonical" href="http://localhost:4000/blog/validadciones-in-git-drupal/" />
-<meta property="og:url" content="http://localhost:4000/blog/validadciones-in-git-drupal/" />
+<link rel="canonical" href="https://mayc1030.github.io/blog/validadciones-in-git-drupal/" />
+<meta property="og:url" content="https://mayc1030.github.io/blog/validadciones-in-git-drupal/" />
 <meta property="og:site_name" content="Maycol Sánchez — Desarrollador Web" />
-<meta property="og:image" content="http://localhost:4000/assets/img/posts/postgit.png" />
+<meta property="og:image" content="https://mayc1030.github.io/assets/img/posts/postgit.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-12-23T00:00:00-05:00" />
 <meta property="article:modified_time" content="2024-12-23T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/img/posts/postgit.png" />
+<meta name="twitter:image" content="https://mayc1030.github.io/assets/img/posts/postgit.png" />
 <meta name="twitter:title" content="Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"mayc1030"},"dateModified":"2024-12-23T00:00:00-05:00","datePublished":"2024-12-23T00:00:00-05:00","description":"Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git","headline":"Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git","image":"http://localhost:4000/assets/img/posts/postgit.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/validadciones-in-git-drupal/"},"url":"http://localhost:4000/blog/validadciones-in-git-drupal/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"mayc1030"},"dateModified":"2024-12-23T00:00:00-05:00","datePublished":"2024-12-23T00:00:00-05:00","description":"Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git","headline":"Configuracion de Validaciones de codigo phpcbf y phpcs en drupal atraves de git","image":"https://mayc1030.github.io/assets/img/posts/postgit.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://mayc1030.github.io/blog/validadciones-in-git-drupal/"},"url":"https://mayc1030.github.io/blog/validadciones-in-git-drupal/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -165,17 +166,19 @@
   <main id="main-content" role="main">
     <div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
 
+<div class="page-back-bar">
+  <div class="container page-back-bar__inner">
+    <a href="/blog/" class="btn btn--ghost btn--sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      <span>Volver al Blog</span>
+    </a>
+  </div>
+</div>
+
 <article class="post-page">
   <div class="container">
-
-    <div class="post-page__back">
-      <a href="/blog/" class="btn btn--ghost btn--sm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
-        </svg>
-        Blog
-      </a>
-    </div>
 
     <header class="post-page__header">
       
@@ -312,7 +315,7 @@ vendor/bin/blt validate:twig
   <div class="share-bar__links">
 
     <a class="share-btn share-btn--whatsapp"
-       href="https://wa.me/?text=Configuracion+de+Validaciones+de+codigo+phpcbf+y+phpcs+en+drupal+atraves+de+git+http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fvalidadciones-in-git-drupal%2F"
+       href="https://wa.me/?text=Configuracion+de+Validaciones+de+codigo+phpcbf+y+phpcs+en+drupal+atraves+de+git+https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fvalidadciones-in-git-drupal%2F"
        target="_blank" rel="noopener noreferrer"
        aria-label="Compartir en WhatsApp">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -321,7 +324,7 @@ vendor/bin/blt validate:twig
     </a>
 
     <a class="share-btn share-btn--facebook"
-       href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fvalidadciones-in-git-drupal%2F"
+       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fvalidadciones-in-git-drupal%2F"
        target="_blank" rel="noopener noreferrer"
        aria-label="Compartir en Facebook">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -330,7 +333,7 @@ vendor/bin/blt validate:twig
     </a>
 
     <a class="share-btn share-btn--linkedin"
-       href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fvalidadciones-in-git-drupal%2F"
+       href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fvalidadciones-in-git-drupal%2F"
        target="_blank" rel="noopener noreferrer"
        aria-label="Compartir en LinkedIn">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -339,7 +342,7 @@ vendor/bin/blt validate:twig
     </a>
 
     <a class="share-btn share-btn--x"
-       href="https://x.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fvalidadciones-in-git-drupal%2F&text=Configuracion+de+Validaciones+de+codigo+phpcbf+y+phpcs+en+drupal+atraves+de+git"
+       href="https://x.com/intent/tweet?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2Fvalidadciones-in-git-drupal%2F&text=Configuracion+de+Validaciones+de+codigo+phpcbf+y+phpcs+en+drupal+atraves+de+git"
        target="_blank" rel="noopener noreferrer"
        aria-label="Compartir en X">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -348,7 +351,7 @@ vendor/bin/blt validate:twig
     </a>
 
     <button class="share-btn share-btn--copy"
-            data-share-copy="http://localhost:4000/blog/validadciones-in-git-drupal/"
+            data-share-copy="https://mayc1030.github.io/blog/validadciones-in-git-drupal/"
             aria-label="Copiar enlace">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
@@ -402,19 +405,37 @@ vendor/bin/blt validate:twig
       
         
           <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            GitHub
+            
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  </svg>
+
+
+            <span>GitHub</span>
           </a>
         
       
         
           <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            LinkedIn
+            
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+  </svg>
+
+
+            <span>LinkedIn</span>
           </a>
         
       
         
           <a href="https://www.drupal.org/u/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="Drupal">
-            Drupal
+            
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+  </svg>
+
+
+            <span>Drupal</span>
           </a>
         
       
@@ -449,13 +470,19 @@ vendor/bin/blt validate:twig
   .footer-social {
     display: flex;
     gap: var(--space-lg);
+    align-items: center;
+    flex-wrap: wrap;
 
     a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
       font-size: var(--text-sm);
       color: var(--color-muted);
       font-weight: var(--weight-medium);
       transition: color var(--transition-fast);
 
+      svg { width: 16px; height: 16px; flex-shrink: 0; }
       &:hover { color: var(--color-primary); }
     }
   }

@@ -3,6 +3,8 @@ title: "Portfolio Personal"
 description: "Sitio web de portafolio profesional construido con Jekyll y desplegado en GitHub Pages. Diseño minimalista con dark mode, tokens de diseño y arquitectura de componentes atómicos."
 emoji: "🌐"
 featured: false
+published: false
+hidden: true
 order: 4
 tech: ["Jekyll", "SCSS", "Liquid", "GitHub Pages"]
 url_demo: "https://mayc1030.github.io"

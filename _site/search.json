@@ -1,6 +1,16 @@
 [
   
     {
+      "title":      "Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica",
+      "url":        "/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/",
+      "date":       "02 Jul 2026",
+      "excerpt":    "Manual integral de arquitectura para el desarrollo moderno con Inteligencia Artificial: Prompt Engineering, RAG, Arneses (AGENTS.md), MCP, Skills, Spec-Driven Development (SDD), Multiagentes y Loop Engineering.",
+      "categories": ["Inteligencia Artificial","Arquitectura de Software"],
+      "tags":       ["ia","llm","sdd","multiagentes","mcp","prompt-engineering","opencode","buenas-practicas"],
+      "image":      ""
+    },
+  
+    {
       "title":      "Arquitectura de Videojuegos 3D en el Navegador con Three.js, Rapier y Web Audio",
       "url":        "/blog/2026/07/01/desarrollo-videojuegos-3d-navegador-threejs-rapier/",
       "date":       "01 Jul 2026",

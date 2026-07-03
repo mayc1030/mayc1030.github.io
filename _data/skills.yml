@@ -1,45 +1,42 @@
 - category: "Lenguajes de Programación"
   category_en: "Programming Languages"
   skills:
-    - { name: "PHP",        level: 4 }
-    - { name: "JavaScript", level: 3 }
-    - { name: "Java",       level: 3 }
-    - { name: "Python",     level: 3 }
+    - { name: "PHP",        level: 5, icon: "devicon-php-plain colored" }
+    - { name: "JavaScript", level: 4, icon: "devicon-javascript-plain colored" }
+    - { name: "Python",     level: 3, icon: "devicon-python-plain colored" }
+    - { name: "Java",       level: 3, icon: "devicon-java-plain colored" }
 
-- category: "Diseño Web"
-  category_en: "Web Design"
+- category: "CMS & Headless"
+  category_en: "CMS & Headless"
   skills:
-    - { name: "HTML",      level: 4 }
-    - { name: "CSS",       level: 2 }
-    - { name: "jQuery",    level: 4 }
-    - { name: "Bootstrap", level: 3 }
+    - { name: "Drupal",    level: 5, icon: "devicon-drupal-plain colored" }
+    - { name: "Strapi",    level: 4, icon_url: "https://cdn.simpleicons.org/strapi/2E7EEA" }
+    - { name: "WordPress", level: 3, icon: "devicon-wordpress-plain colored" }
 
-- category: "Base de Datos"
-  category_en: "Databases"
+- category: "Frameworks & Backend"
+  category_en: "Frameworks & Backend"
   skills:
-    - { name: "MySQL",      level: 4 }
-    - { name: "PostgreSQL", level: 3 }
-    - { name: "Oracle",     level: 2 }
+    - { name: "Laravel",  level: 4, icon: "devicon-laravel-original colored" }
+    - { name: "Symfony",  level: 4, icon: "devicon-symfony-original" }
+    - { name: "Node.js",  level: 4, icon: "devicon-nodejs-plain colored" }
+    - { name: "Django",   level: 3, icon: "devicon-django-plain colored" }
 
-- category: "Framework Web"
-  category_en: "Web Frameworks"
+- category: "Frontend & Librerías"
+  category_en: "Frontend & Libraries"
   skills:
-    - { name: "Symphony", level: 4 }
-    - { name: "Django",   level: 2 }
-    - { name: "Laravel",  level: 2 }
-    - { name: "Angular",  level: 2 }
-    - { name: "React",    level: 1 }
+    - { name: "React",     level: 4, icon: "devicon-react-original colored" }
+    - { name: "Angular",   level: 3, icon: "devicon-angularjs-plain colored" }
+    - { name: "HTML5",     level: 5, icon: "devicon-html5-plain colored" }
+    - { name: "CSS3",      level: 4, icon: "devicon-css3-plain colored" }
+    - { name: "Bootstrap", level: 4, icon: "devicon-bootstrap-plain colored" }
+    - { name: "jQuery",    level: 4, icon: "devicon-jquery-plain colored" }
 
-- category: "CMS"
-  category_en: "CMS"
+- category: "Bases de Datos & DevOps"
+  category_en: "Databases & DevOps"
   skills:
-    - { name: "Drupal",    level: 4 }
-    - { name: "Strapi",    level: 3 }
-    - { name: "WordPress", level: 2 }
-
-- category: "Otros"
-  category_en: "Others"
-  skills:
-    - { name: "Git",        level: 4 }
-    - { name: "Photoshop",  level: 3 }
-    - { name: "Docker",     level: 2 }
+    - { name: "MySQL",      level: 4, icon: "devicon-mysql-plain colored" }
+    - { name: "PostgreSQL", level: 3, icon: "devicon-postgresql-plain colored" }
+    - { name: "Oracle",     level: 3, icon: "devicon-oracle-original colored" }
+    - { name: "Docker",     level: 3, icon: "devicon-docker-plain colored" }
+    - { name: "Git",        level: 4, icon: "devicon-git-plain colored" }
+    - { name: "Photoshop",  level: 3, icon: "devicon-photoshop-plain colored" }

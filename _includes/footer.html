@@ -9,7 +9,8 @@
       {% for link in site.data.social %}
         {% if link.url != "" %}
           <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ link.name }}">
-            {{ link.name }}
+            {% include components/social-icon.html icon=link.icon %}
+            <span>{{ link.name }}</span>
           </a>
         {% endif %}
       {% endfor %}
@@ -44,13 +45,19 @@
   .footer-social {
     display: flex;
     gap: var(--space-lg);
+    align-items: center;
+    flex-wrap: wrap;
 
     a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
       font-size: var(--text-sm);
       color: var(--color-muted);
       font-weight: var(--weight-medium);
       transition: color var(--transition-fast);
 
+      svg { width: 16px; height: 16px; flex-shrink: 0; }
       &:hover { color: var(--color-primary); }
     }
   }

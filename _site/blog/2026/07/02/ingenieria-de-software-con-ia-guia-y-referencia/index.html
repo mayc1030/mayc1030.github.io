@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');
+      if(t) document.documentElement.setAttribute('data-theme',t);
+      if(l) document.documentElement.setAttribute('data-lang',l);
+    })();
+  </script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica | Maycol Sánchez — Desarrollador Web</title>
+<meta name="description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+<meta name="author" content="Maycol Sánchez">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica | Maycol Sánchez — Desarrollador Web">
+<meta property="og:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maycol Sánchez — Desarrollador Web">
+<meta name="twitter:description" content="Portfolio profesional de Maycol Sánchez, desarrollador web Full Stack especializado en React y tecnologías modernas.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- Dark mode: leer preferencia antes de pintar para evitar flash -->
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', stored || preferred);
+  })();
+</script>
+
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica | Maycol Sánchez — Desarrollador Web</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica" />
+<meta name="author" content="Maycol Sánchez" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Manual integral de arquitectura para el desarrollo moderno con Inteligencia Artificial: Prompt Engineering, RAG, Arneses (AGENTS.md), MCP, Skills, Spec-Driven Development (SDD), Multiagentes y Loop Engineering." />
+<meta name="twitter:description" property="og:description" content="Manual integral de arquitectura para el desarrollo moderno con Inteligencia Artificial: Prompt Engineering, RAG, Arneses (AGENTS.md), MCP, Skills, Spec-Driven Development (SDD), Multiagentes y Loop Engineering." />
+<link rel="canonical" href="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/" />
+<meta property="og:url" content="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/" />
+<meta property="og:site_name" content="Maycol Sánchez — Desarrollador Web" />
+<meta property="og:image" content="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-02T00:00:00-05:00" />
+<meta property="article:modified_time" content="2026-07-02T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/" />
+<meta name="twitter:title" content="Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Maycol Sánchez"},"dateModified":"2026-07-02T00:00:00-05:00","datePublished":"2026-07-02T00:00:00-05:00","description":"Manual integral de arquitectura para el desarrollo moderno con Inteligencia Artificial: Prompt Engineering, RAG, Arneses (AGENTS.md), MCP, Skills, Spec-Driven Development (SDD), Multiagentes y Loop Engineering.","headline":"Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica","image":"https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/","mainEntityOfPage":{"@type":"WebPage","@id":"https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/"},"url":"https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <div class="site-loader__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <p class="site-loader__name">Maycol<span>.</span></p>
+    <div class="site-loader__bar"><span></span></div>
+  </div>
+
+  <header class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <a href="/" class="site-logo" aria-label="Inicio">
+      Maycol<span>.</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="/#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="/#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="/#skills" data-i18n="nav.skills">Skills</a>
+      <a href="/#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="search-btn" id="search-btn" aria-label="Buscar" title="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+
+      <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Change language" title="Cambiar idioma">
+        <span class="lang-toggle__es">ES</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__en">EN</span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar posts" hidden>
+  <div class="search-overlay__backdrop"></div>
+  <div class="search-overlay__panel">
+    <div class="search-overlay__input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="search-overlay__icon">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-overlay-input"
+        class="search-overlay__input"
+        placeholder="Buscar posts..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Buscar posts">
+      <button class="search-overlay__close" id="search-overlay-close" aria-label="Cerrar búsqueda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <span style="font-size:.7rem;font-weight:600;opacity:.6;line-height:1">ESC</span>
+      </button>
+    </div>
+    <div class="search-overlay__results" id="search-overlay-results" role="list" aria-live="polite"></div>
+  </div>
+</div>
+
+
+  <main id="main-content" role="main">
+    <div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
+<div class="page-back-bar">
+  <div class="container page-back-bar__inner">
+    <a href="/blog/" class="btn btn--ghost btn--sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      <span>Volver al Blog</span>
+    </a>
+  </div>
+</div>
+
+<article class="post-page">
+  <div class="container">
+
+    <header class="post-page__header">
+      
+        <div class="post-page__categories">
+          
+            <a href="/blog/?category=inteligencia-artificial" class="badge badge--tech">Inteligencia Artificial</a>
+          
+            <a href="/blog/?category=arquitectura-de-software" class="badge badge--tech">Arquitectura de Software</a>
+          
+        </div>
+      
+
+      <h1 class="post-page__title">Ingeniería de Software con IA: Guía Definitiva y Referencia Técnica</h1>
+
+      <div class="post-page__meta">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          02 Jul 2026
+        </span>
+        
+        
+        
+        
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          19 min de lectura
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-page__emoji-cover" aria-hidden="true">🤖</div>
+    
+
+    <div class="post-content">
+      <p>El desarrollo de software contemporáneo está experimentando una transición paradigmática. La adopción de Modelos de Lenguaje de Gran Escala (<strong>LLMs</strong>) en los ciclos de ingeniería trasciende la automatización sintáctica del autocompletado; representa una reestructuración fundamental en la arquitectura, especificación y verificación formal de los sistemas informáticos.</p>
+
+<p>Al integrar agentes probabilísticos en entornos de producción, el reto arquitectónico primordial es su <strong>indeterminismo intrínseco</strong>. Sin un marco de contención riguroso, la variabilidad en las inferencias del modelo induce entropía en la base de código, generando alucinaciones de dependencias, violaciones de principios S.O.L.I.D. y regresiones difíciles de auditar.</p>
+
+<p>Esta guía constituye un manual técnico de referencia para gobernar la asistencia artificial en el desarrollo de software, estableciendo guardarraíles deterministas, flujos multiagente y bucles de validación autónomos.</p>
+
+<hr />
+
+<h2 id="1-fundamentos-anatomía-de-un-prompt-profesional-prompt-engineering">1. Fundamentos: Anatomía de un Prompt Profesional (Prompt Engineering)</h2>
+
+<p>En ingeniería de software con IA, un <em>prompt</em> no es una consulta conversacional, sino una <strong>interfaz contractual de entrada</strong> (<em>Input Specification</em>). Para minimizar la entropía probabilística y maximizar el determinismo, la estructura del prompt debe fundamentarse en <strong>5 pilares arquitectónicos</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Pilar</th>
+      <th style="text-align: left">Pregunta Clave</th>
+      <th style="text-align: left">Propósito Técnico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>1. Rol</strong></td>
+      <td style="text-align: left"><em>¿Quién ejecuta la acción?</em></td>
+      <td style="text-align: left">Configura el espacio latente del modelo hacia una especialidad técnica concreta (ej. Arquitecto Cloud Senior).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>2. Contexto</strong></td>
+      <td style="text-align: left"><em>¿En qué entorno operamos?</em></td>
+      <td style="text-align: left">Delimita el ecosistema del proyecto: versiones exactas de lenguajes, ORMs, frameworks y patrones existentes.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>3. Tarea Exacta</strong></td>
+      <td style="text-align: left"><em>¿Cuál es el requerimiento?</em></td>
+      <td style="text-align: left">Define de forma atómica, medible y unívoca el objetivo funcional o módulo a construir.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>4. Restricciones</strong></td>
+      <td style="text-align: left"><em>¿Qué límites de seguridad rigen?</em></td>
+      <td style="text-align: left">Establece invariantes del sistema: manejo obligatorio de excepciones, tipado estricto y librerías prohibidas.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>5. Formato de Salida</strong></td>
+      <td style="text-align: left"><em>¿Cómo se estructura la respuesta?</em></td>
+      <td style="text-align: left">Determina el artefacto exacto de retorno (ej. bloque de código autocontenido sin prosa conversacional).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ejemplo-práctico-de-prompt-estructurado">Ejemplo Práctico de Prompt Estructurado</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1. Rol] 
+Actúa como un Ingeniero de Software Principal especializado en Seguridad y Arquitectura Backend.
+
+[2. Contexto] 
+Desarrollamos un microservicio financiero en Node.js v22 con TypeScript estricto y Express 5. La persistencia se maneja con PostgreSQL y Prisma ORM.
+
+[3. Tarea Exacta] 
+Implementa el middleware de autenticación JWT y verificación de permisos basados en roles (RBAC) para proteger los endpoints de transferencias bancarias.
+
+[4. Restricciones] 
+<span class="p">-</span> El código debe cumplir el principio de responsabilidad única (SoC).
+<span class="p">-</span> Valida la firma del token usando la librería estándar <span class="sb">`jose`</span> con algoritmos asimétricos RS256.
+<span class="p">-</span> En caso de token expirado o firma inválida, lanza una excepción de tipo <span class="sb">`UnauthorizedError`</span> que sea capturada por el manejador global HTTP 401.
+<span class="p">-</span> Prohibido el uso de tipado dinámico (<span class="sb">`any`</span>). Todas las firmas deben estar fuertemente tipadas.
+
+[5. Formato de Salida] 
+Devuelve exclusivamente el módulo de código TypeScript debidamente documentado, sin saludos ni introducciones conceptuales previas.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="2-rag-retrieval-augmented-generation-eliminando-alucinaciones">2. RAG (Retrieval-Augmented Generation): Eliminando Alucinaciones</h2>
+
+<p>Los LLMs están limitados por el corte temporal de sus datos de preentrenamiento. Al solicitar código para una librería publicada recientemente o consultar reglas de negocio internas privadas, el modelo es propenso a la <strong>alucinación</strong> (generación de sintaxis verosímil pero inexistente o insegura).</p>
+
+<p>El patrón <strong>RAG (Retrieval-Augmented Generation)</strong> resuelve este problema de raíz al desacoplar el motor de razonamiento (LLM) de la fuente de verdad. Antes de realizar la inferencia, un motor de recuperación intercepta la consulta, busca los fragmentos documentales exactos en una base de datos vectorial privada o en la web, e <strong>inyecta el contexto real en el prompt de sistema</strong>.</p>
+
+<h3 id="patrón-de-implementación-arquitectónica-rag">Patrón de Implementación Arquitectónica RAG</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ejemplo arquitectónico simplificado en Python con un repositorio vectorial (pgvector)
+</span><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">import</span> <span class="n">openai</span>
+<span class="kn">from</span> <span class="n">db</span> <span class="kn">import</span> <span class="n">VectorRepository</span> <span class="c1"># Repositorio interno de la empresa
+</span>
+<span class="k">class</span> <span class="nc">RAGCodeGenerator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">vector_repo</span><span class="p">:</span> <span class="n">VectorRepository</span><span class="p">,</span> <span class="n">llm_client</span><span class="p">:</span> <span class="n">openai</span><span class="p">.</span><span class="n">Client</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">repo</span> <span class="o">=</span> <span class="n">vector_repo</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">llm_client</span>
+
+    <span class="k">def</span> <span class="nf">generate_component</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">user_query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="c1"># 1. Convertir la consulta en embedding e indexar en la base de datos documental
+</span>        <span class="n">query_embedding</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">embeddings</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+            <span class="nb">input</span><span class="o">=</span><span class="n">user_query</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">text-embedding-3-large</span><span class="sh">"</span>
+        <span class="p">).</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">embedding</span>
+        
+        <span class="c1"># 2. Recuperar la especificación oficial y el código interno relevante (top 3)
+</span>        <span class="n">context_docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">repo</span><span class="p">.</span><span class="nf">similarity_search</span><span class="p">(</span><span class="n">query_embedding</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">context_block</span> <span class="o">=</span> <span class="sh">"</span><span class="se">\n</span><span class="s">---</span><span class="se">\n</span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">context_docs</span><span class="p">)</span>
+
+        <span class="c1"># 3. Construir el prompt inyectando la fuente de verdad
+</span>        <span class="n">system_prompt</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sh">"</span><span class="s">Actúa como un desarrollador experto. Debes responder a la consulta del usuario </span><span class="sh">"</span>
+            <span class="sh">"</span><span class="s">basándote ÚNICAMENTE en la siguiente documentación interna oficial recuperada:</span><span class="se">\n\n</span><span class="sh">"</span>
+            <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">context_block</span><span class="si">}</span><span class="se">\n\n</span><span class="sh">"</span>
+            <span class="sh">"</span><span class="s">Si la documentación no contiene información suficiente, indícalo explícitamente en lugar de suponer.</span><span class="sh">"</span>
+        <span class="p">)</span>
+
+        <span class="c1"># 4. Inferencia determinista fundamentada
+</span>        <span class="n">response</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">chat</span><span class="p">.</span><span class="n">completions</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-4o</span><span class="sh">"</span><span class="p">,</span>
+            <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+                <span class="p">{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">system</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+                <span class="p">{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">user_query</span><span class="p">}</span>
+            <span class="p">],</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="mf">0.1</span> <span class="c1"># Temperatura baja para minimizar variabilidad
+</span>        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">message</span><span class="p">.</span><span class="n">content</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3-harness-engineering-arneses-de-control-y-guardarraíles">3. Harness Engineering (Arneses de Control y Guardarraíles)</h2>
+
+<p>El <strong>Harness Engineering (Ingeniería de Arneses)</strong> es la disciplina encargada de diseñar la infraestructura de control determinista que envuelve la ejecución de un LLM. Un arnés actúa como un exoesqueleto de guardarraíles (<em>Guardrails</em>): reglas estáticas, hooks de Git, linters automatizados y validadores de esquema que bloquean en tiempo de ejecución cualquier salida que viole los estándares del sistema.</p>
+
+<p>Sin un arnés de control, un agente autónomo degrada progresivamente la calidad del repositorio al ignorar convenciones arquitectónicas preexistentes.</p>
+
+<h3 id="ejemplo-técnico-de-arnés-validación-estructural-de-código-generado">Ejemplo Técnico de Arnés: Validación Estructural de Código Generado</h3>
+
+<p>A continuación se ilustra un arnés en TypeScript utilizando un esquema de validación estricto con <code class="language-plaintext highlighter-rouge">Zod</code>. Este mecanismo intercepta la respuesta estructurada de un agente de IA antes de permitir que escriba en el sistema de archivos:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">z</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">zod</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">fs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">node:fs/promises</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// 1. Definir el guardarraíl estructural con Zod</span>
+<span class="kd">const</span> <span class="nx">AgentFilePatchSchema</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="nf">object</span><span class="p">({</span>
+  <span class="na">targetFile</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">().</span><span class="nf">startsWith</span><span class="p">(</span><span class="dl">"</span><span class="s2">src/</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Solo se permite modificar archivos dentro de src/</span><span class="dl">"</span> <span class="p">}),</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">()).</span><span class="nf">refine</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">deps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">deps</span><span class="p">.</span><span class="nf">some</span><span class="p">((</span><span class="nx">dep</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dep</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">lodash</span><span class="dl">"</span><span class="p">)</span> <span class="o">||</span> <span class="nx">dep</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">moment</span><span class="dl">"</span><span class="p">)),</span>
+    <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Violación de arnés: Uso prohibido de librerías deprecadas (lodash/moment).</span><span class="dl">"</span> <span class="p">}</span>
+  <span class="p">),</span>
+  <span class="na">codeContent</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">().</span><span class="nf">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="dl">"</span><span class="s2">El código generado no puede estar vacío</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">testContent</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">().</span><span class="nf">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">describe(</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Todo código debe incluir pruebas unitarias con Vitest/Jest</span><span class="dl">"</span> <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="kd">type</span> <span class="nx">AgentFilePatch</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="nx">infer</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">AgentFilePatchSchema</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// 2. Ejecutor de arnés que valida la salida de la IA antes de aplicar cambios</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">enforceHarnessAndApplyPatch</span><span class="p">(</span><span class="nx">rawAiResponse</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">validationResult</span> <span class="o">=</span> <span class="nx">AgentFilePatchSchema</span><span class="p">.</span><span class="nf">safeParse</span><span class="p">(</span><span class="nx">rawAiResponse</span><span class="p">);</span>
+
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">validationResult</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// El arnés bloquea la operación y devuelve las fallas exactas al agente</span>
+    <span class="kd">const</span> <span class="nx">formattedErrors</span> <span class="o">=</span> <span class="nx">validationResult</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">issues</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="s2">`</span><span class="p">${</span><span class="nx">err</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">)}</span><span class="s2">: </span><span class="p">${</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="s2">`</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="dl">'</span><span class="se">\n</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`[GUARDRAIL VIOLATION] El agente generó una salida ilegal:\n</span><span class="p">${</span><span class="nx">formattedErrors</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="na">validPatch</span><span class="p">:</span> <span class="nx">AgentFilePatch</span> <span class="o">=</span> <span class="nx">validationResult</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+  
+  <span class="c1">// 3. Aplicación segura del código verificado por el arnés</span>
+  <span class="k">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nf">writeFile</span><span class="p">(</span><span class="nx">validPatch</span><span class="p">.</span><span class="nx">targetFile</span><span class="p">,</span> <span class="nx">validPatch</span><span class="p">.</span><span class="nx">codeContent</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[HARNESS PASSED] Archivo </span><span class="p">${</span><span class="nx">validPatch</span><span class="p">.</span><span class="nx">targetFile</span><span class="p">}</span><span class="s2"> actualizado de forma segura.`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-el-archivo-agentsmd-la-memoria-persistente">4. El Archivo <code class="language-plaintext highlighter-rouge">AGENTS.md</code>: La Memoria Persistente</h2>
+
+<p>El archivo <code class="language-plaintext highlighter-rouge">AGENTS.md</code> es el <strong>System Prompt persistente</strong> del repositorio. Al conectarse al proyecto, los asistentes de IA leen este documento para interiorizar la arquitectura, comandos y restricciones del sistema.</p>
+
+<blockquote>
+  <p>[!IMPORTANT]
+<strong>Límite Arquitectónico Estricto (&lt; 500 líneas):</strong> Para evitar la degradación de atención en la ventana de contexto del LLM y reducir costos de latencia/tokens, el archivo <code class="language-plaintext highlighter-rouge">AGENTS.md</code> <strong>nunca debe superar las 500 líneas</strong>. Si el repositorio requiere reglas extensas, externalízalas en subcarpetas modulares y referéncialas.</p>
+</blockquote>
+
+<h3 id="plantilla-estándar-del-agentsmd">Plantilla Estándar del <code class="language-plaintext highlighter-rouge">AGENTS.md</code></h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># [Nombre del Proyecto]</span>
+Plataforma SaaS de gestión logística y ruteo en tiempo real.
+
+<span class="gu">## Stack Técnico</span>
+<span class="p">-</span> <span class="gs">**Lenguaje:**</span> TypeScript v5.6 (Configuración strict)
+<span class="p">-</span> <span class="gs">**Runtime / Framework:**</span> Node.js v22 + Fastify
+<span class="p">-</span> <span class="gs">**Base de Datos:**</span> PostgreSQL v16 manejada con Drizzle ORM
+<span class="p">-</span> <span class="gs">**Testing:**</span> Vitest + Supertest
+
+<span class="gu">## Comandos Críticos</span>
+<span class="p">-</span> <span class="sb">`npm run dev`</span> — Inicia el servidor local de desarrollo.
+<span class="p">-</span> <span class="sb">`npm test`</span> — Ejecuta la suite de pruebas (debe pasar el 100% antes de cada PR).
+<span class="p">-</span> <span class="sb">`npm run typecheck`</span> — Verifica la integridad del tipado estático en todo el proyecto.
+<span class="p">-</span> <span class="sb">`npm run lint`</span> — Ejecuta Biome para auditoría de estilo y sintaxis.
+
+<span class="gu">## Estructura del Proyecto</span>
+<span class="p">-</span> <span class="sb">`src/domain/`</span> — Entidades puras y reglas de negocio (inmutables y sin dependencias externas).
+<span class="p">-</span> <span class="sb">`src/infra/`</span> — Adaptadores de base de datos, colas e interfaces de red.
+<span class="p">-</span> <span class="sb">`src/http/`</span> — Rutas HTTP, controladores y esquemas de validación de entrada.
+
+<span class="gu">## Convenciones y Estándares</span>
+<span class="p">-</span> <span class="gs">**Nomenclatura:**</span> <span class="sb">`camelCase`</span> para variables/funciones; <span class="sb">`PascalCase`</span> para clases/tipos.
+<span class="p">-</span> <span class="gs">**Principio de Separación:**</span> Los controladores HTTP no contienen consultas SQL ni lógica de negocio.
+<span class="p">-</span> <span class="gs">**Manejo de Errores:**</span> Lanzar siempre subclases de <span class="sb">`AppError`</span> predefinidas en <span class="sb">`src/errors/`</span>.
+
+<span class="gu">## Límites Prohibidos (No Hagas)</span>
+<span class="p">-</span> Prohibido instalar paquetes de npm sin confirmación previa del ingeniero responsable.
+<span class="p">-</span> Prohibido alterar esquemas de base de datos directamente en producción; usar siempre migraciones.
+<span class="p">-</span> Prohibido desactivar reglas del linter (<span class="sb">`// @ts-ignore`</span> o <span class="sb">`// eslint-disable`</span>).
+
+<span class="gu">## Flujo de Trabajo</span>
+<span class="p">1.</span> Ante tareas complejas, redacta primero un plan de implementación técnico y espera la validación.
+<span class="p">2.</span> Modifica un solo módulo a la vez y ejecuta <span class="sb">`npm test`</span> para asegurar que no hay regresiones.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-mcp-model-context-protocol-y-context7">5. MCP (Model Context Protocol) y Context7</h2>
+
+<p>El <strong>Model Context Protocol (MCP)</strong> es un estándar abierto desarrollado por Anthropic que estandariza cómo los LLMs se comunican con fuentes de datos externas, servidores locales y herramientas de desarrollo. Actúa como una capa de abstracción universal que reemplaza las integraciones ad-hoc.</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Directorio de ecosistema MCP: <a href="https://mcp.directory/">mcp.directory</a></td>
+          <td><a href="https://mcpservers.org/">mcpservers.org</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="caso-técnico-context7">Caso Técnico: Context7</h3>
+<p><strong>Context7</strong> es un servidor MCP diseñado para resolver el problema de la obsolescencia de APIs. Permite que entornos de desarrollo asistido (como OpenCode o IDEs con IA) consulten en tiempo real la documentación oficial y ejemplos de código actualizados directamente desde las fuentes del framework antes de escribir una sola línea.</p>
+
+<h4 id="ejemplo-técnico-de-configuración-y-uso-de-mcp-en-opencodejson">Ejemplo Técnico de Configuración y Uso de MCP en <code class="language-plaintext highlighter-rouge">opencode.json</code></h4>
+
+<p>Para habilitar Context7 en tu IDE y asegurar que el modelo no invente sintaxis obsoleta de React o Node, se registra el servidor en el archivo de configuración de herramientas:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"context7"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npx"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"-y"</span><span class="p">,</span><span class="w"> </span><span class="s2">"@context7/mcp-server"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"CONTEXT7_API_KEY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c7_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Flujo de ejecución interna durante el desarrollo:</strong></p>
+<ol>
+  <li>El programador solicita: <em>“Crea un hook de transacciones concurrentes en React 19”</em>.</li>
+  <li>El agente intercepta la petición e invoca el tool del servidor MCP: <code class="language-plaintext highlighter-rouge">context7.search_docs({ query: "React 19 useTransition and actions" })</code>.</li>
+  <li>El servidor MCP devuelve la especificación oficial actual del equipo de React.</li>
+  <li>El agente codifica la solución basada en la especificación real recuperada, garantizando un código 100% al día y libre de métodos obsoletos.</li>
+</ol>
+
+<hr />
+
+<h2 id="6-skills-habilidades-modulares-bajo-demanda">6. Skills: Habilidades Modulares Bajo Demanda</h2>
+
+<p>Las <strong>Skills</strong> representan paquetes encapsulados de conocimiento de dominio especializado (diseño frontend, auditoría de seguridad, refactorización SQL) que se cargan de forma dinámica en el contexto del modelo <strong>únicamente durante la ejecución de la tarea relevante</strong>.</p>
+
+<p>Al terminar la tarea, la habilidad se descarga del contexto activo. Esto preserva la atención del LLM y ahorra de forma masiva el consumo de tokens.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Instalación e importación de una habilidad en el ecosistema</span>
+npx skills add https://github.com/anthropics/skills <span class="nt">--skill</span> frontend-design
+
+<span class="c"># Invocación en el flujo de trabajo</span>
+<span class="o">&gt;</span> <span class="s2">"Aplica estilos al componente de facturación siguiendo las directrices del skill /frontend-design"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="7-comandos-esenciales-de-opencode">7. Comandos Esenciales de OpenCode</h2>
+
+<p>Al operar con entornos avanzados de agentes en consola o IDE (como OpenCode), estos son los comandos de control operacional:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Comando</th>
+      <th style="text-align: left">Acción Arquitectónica</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/connect</code></td>
+      <td style="text-align: left">Configura y autentica proveedores externos de inferencia LLM.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/models</code></td>
+      <td style="text-align: left">Alterna dinámicamente entre modelos según la complejidad (ej. Claude 3.5 Sonnet para razonamiento denso, modelos rápidos para formateo).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/status</code></td>
+      <td style="text-align: left">Desglosa la telemetría del agente: saturación del contexto actual y costos computacionales.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/new</code> / <code class="language-plaintext highlighter-rouge">/sessions</code></td>
+      <td style="text-align: left">Aisla contextos purificando el buffer del chat para evitar contaminación entre características inconexas.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/init</code></td>
+      <td style="text-align: left">Bootstrap de un nuevo repositorio con la estructura canónica de arneses y <code class="language-plaintext highlighter-rouge">AGENTS.md</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/mcp</code></td>
+      <td style="text-align: left">Administra e inspecciona el estado de los servidores MCP activos en la sesión.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/skills</code></td>
+      <td style="text-align: left">Administra el inventario de habilidades modulares montadas en el agente.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/compact</code></td>
+      <td style="text-align: left">Comprime el árbol conversacional actual en un resumen denso, recuperando tokens en tareas de larga duración.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="8-spec-driven-development-sdd-el-cambio-de-paradigma">8. Spec-Driven Development (SDD): El Cambio de Paradigma</h2>
+
+<p>El <strong>Spec-Driven Development (Desarrollo Guiado por Especificaciones)</strong> constituye la metodología de control de riesgos fundamental para operar con ingeniería multiagente.</p>
+
+<p>El paradigma tradicional <em>“escribe código y verifica si funciona”</em> fracasa ante la estocasticidad de los LLMs. El SDD formaliza un cambio estructural: <strong>El esfuerzo de ingeniería se desplaza de la redacción manual de código a la validación rigurosa de la intención y la especificación</strong>.</p>
+
+<p>En este enfoque:</p>
+<ol>
+  <li><strong>La Especificación (<code class="language-plaintext highlighter-rouge">Spec</code>) es el artefacto soberano de verdad.</strong></li>
+  <li><strong>El Ingeniero Humano actúa como Validador Arquitectónico de Intentos.</strong></li>
+  <li><strong>El Código fuente es un producto derivado, efímero y regenerable.</strong></li>
+</ol>
+
+<h3 id="ciclo-operativo-de-sdd">Ciclo Operativo de SDD</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1. Constitution] ──&gt; [2. Specify] ──&gt; [3. Plan] ──&gt; [4. Tasks] ──&gt; [5. Implement] ──&gt; [6. Verify]
+       ▲                                                                                │
+       └──────────────────────── Si la verificación falla, se ajusta ───────────────────┘
+</code></pre></div></div>
+
+<ol>
+  <li><strong>Constitution:</strong> Reglas macro-arquitectónicas invariables del sistema (definidas una única vez).</li>
+  <li><strong>Specify:</strong> Redacción del requerimiento funcional detallando <strong>criterios de aceptación cuantificables</strong>.</li>
+  <li><strong>Plan:</strong> Diseño de arquitectura técnica: diagramas de secuencia, estructuras de datos y contratos de APIs.</li>
+  <li><strong>Tasks:</strong> Descomposición del plan en un grafo de tareas atómicas independientemente verificables.</li>
+  <li><strong>Implement:</strong> Delegación al agente para escribir el código cumpliendo estrictamente con el plan.</li>
+  <li><strong>Verify:</strong> Ejecución automática de pruebas de regresión e inspección contra los criterios de aceptación.</li>
+</ol>
+
+<h3 id="estructura-del-ecosistema-sdd-en-el-proyecto">Estructura del Ecosistema SDD en el Proyecto</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mi-proyecto/
+├── spec/
+│   ├── constitution/
+│   │   ├── mission.md        # Definición de objetivos del sistema
+│   │   └── tech-stack.md     # Estándares técnicos soberanos
+│   └── features/
+│       └── 001-autenticacion-jwt/
+│           ├── spec.md       # Criterios de aceptación e invariantes
+│           ├── plan.md       # Diseño técnico y contrato de interfaces
+│           └── tasks.md      # Checklist granular de tareas atómicas
+└── src/                      # Código fuente derivado por los agentes
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="9-ecosistemas-multiagente-separation-of-concerns">9. Ecosistemas Multiagente (Separation of Concerns)</h2>
+
+<p>Para resolver problemas de alta complejidad computacional sin provocar desbordamientos de contexto ni alucinaciones, aplicamos el principio de <strong>Separación de Responsabilidades (SoC)</strong> a nivel de agentes.</p>
+
+<p>En lugar de depender de un solo modelo monolítico, orquestamos un ecosistema de agentes concurrentes y subagentes especializados, cada uno con un contexto acotado y permisos mínimos:</p>
+
+<h3 id="roles-arquitectónicos-en-el-ecosistema">Roles Arquitectónicos en el Ecosistema</h3>
+
+<ol>
+  <li><strong>Agente Coordinador (Orquestador):</strong> Carece de permisos de escritura de código. Analiza la especificación técnica (<code class="language-plaintext highlighter-rouge">plan.md</code>), desglosa las tareas y despacha instrucciones a agentes especializados en paralelo.</li>
+  <li><strong>Agente Implementador (Coder):</strong> Recibe una tarea atómica con un subconjunto estricto de archivos permitidos. Escribe o refactoriza el código en aislamiento.</li>
+  <li><strong>Agente Verificador (QA / Auditor):</strong> Opera en una instancia limpia sin contexto contaminado por la creación. Ejecuta suites de pruebas, linters y audita la seguridad del código generado contra la especificación.</li>
+</ol>
+
+<hr />
+
+<h2 id="10-loop-engineering-bucles-de-retroalimentación-autónomos">10. Loop Engineering (Bucles de Retroalimentación Autónomos)</h2>
+
+<p>La <strong>Ingeniería de Bucles (<em>Loop Engineering</em>)</strong> es la metodología para construir sistemas autónomos cerrados de iteración y auto-corrección. En lugar de que un ingeniero inspeccione manualmente un fallo de compilación para re-explicárselo al LLM, se programa un bucle determinista que captura la retroalimentación de las herramientas de compilación o testing e impulsa la convergencia automática hacia un estado válido.</p>
+
+<h3 id="ejemplo-técnico-ejecutable-bucle-autónomo-de-compilación-y-corrección-ciagent-loop">Ejemplo Técnico Ejecutable: Bucle Autónomo de Compilación y Corrección (CI/Agent Loop)</h3>
+
+<p>El siguiente script en Node/TypeScript muestra cómo se implementa un bucle autónomo en producción. El agente genera código, el sistema ejecuta las pruebas automáticas (<code class="language-plaintext highlighter-rouge">npm test</code>) y, si ocurren fallos, captura el <em>standard error</em> (<code class="language-plaintext highlighter-rouge">stderr</code>) y lo reinyecta en el prompt del agente hasta que el código compila y pasa todas las pruebas:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">exec</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">node:child_process</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">promisify</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">node:util</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">callLlmAgent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./llmClient</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">execAsync</span> <span class="o">=</span> <span class="nf">promisify</span><span class="p">(</span><span class="nx">exec</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">autonomousDevelopmentLoop</span><span class="p">(</span>
+  <span class="nx">taskSpecification</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+  <span class="nx">targetFilePath</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+  <span class="nx">maxIterations</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">currentIteration</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">currentFeedback</span> <span class="o">=</span> <span class="s2">`Implementa la tarea según esta especificación: </span><span class="p">${</span><span class="nx">taskSpecification</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+  <span class="k">while </span><span class="p">(</span><span class="nx">currentIteration</span> <span class="o">&lt;=</span> <span class="nx">maxIterations</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[LOOP ENGINEERING] Iteración </span><span class="p">${</span><span class="nx">currentIteration</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">maxIterations</span><span class="p">}</span><span class="s2"> iniciada...`</span><span class="p">);</span>
+
+    <span class="c1">// 1. Invocar al agente para generar o corregir el código con el feedback actual</span>
+    <span class="kd">const</span> <span class="nx">generatedCode</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">callLlmAgent</span><span class="p">(</span><span class="nx">currentFeedback</span><span class="p">);</span>
+    <span class="k">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nf">writeFile</span><span class="p">(</span><span class="nx">targetFilePath</span><span class="p">,</span> <span class="nx">generatedCode</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="c1">// 2. Ejecutar la verificación determinista en el arnés (Tests Unitarios + Linter)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">[LOOP ENGINEERING] Ejecutando suite de verificación (Vitest)...</span><span class="dl">"</span><span class="p">);</span>
+      <span class="k">await</span> <span class="nf">execAsync</span><span class="p">(</span><span class="dl">"</span><span class="s2">npx vitest run --reporter=basic</span><span class="dl">"</span><span class="p">);</span>
+      
+      <span class="c1">// Si la ejecución no lanza excepción, el código de salida fue 0 (Éxito total)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[CONVERGENCIA ALCANZADA] El código superó todos los criterios en la iteración </span><span class="p">${</span><span class="nx">currentIteration</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="na">error</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 3. Capturar el stacktrace exacto del compilador o runner de pruebas</span>
+      <span class="kd">const</span> <span class="nx">testFailureLogs</span> <span class="o">=</span> <span class="nx">error</span><span class="p">.</span><span class="nx">stdout</span> <span class="o">||</span> <span class="nx">error</span><span class="p">.</span><span class="nx">stderr</span> <span class="o">||</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">warn</span><span class="p">(</span><span class="s2">`[FALLO EN VERIFICACIÓN] Iteración </span><span class="p">${</span><span class="nx">currentIteration</span><span class="p">}</span><span class="s2"> no superó las pruebas.`</span><span class="p">);</span>
+
+      <span class="c1">// 4. Retroalimentar el bucle para la siguiente iteración</span>
+      <span class="nx">currentFeedback</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">`El código que escribiste falló las pruebas automáticas. `</span>
+        <span class="s2">`Aquí está la salida exacta de la terminal (stderr/stdout):\n\n`</span>
+        <span class="s2">`</span><span class="p">${</span><span class="nx">testFailureLogs</span><span class="p">}</span><span class="s2">\n\n`</span>
+        <span class="s2">`Corrige estrictamente los errores reportados en el código y devuelve el archivo completo en tu siguiente intento.`</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">currentIteration</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`[LOOP EXHAUSTED] El agente no logró converger después de </span><span class="p">${</span><span class="nx">maxIterations</span><span class="p">}</span><span class="s2"> iteraciones.`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>La madurez en la ingeniería de software con Inteligencia Artificial no se mide por la cantidad de código generado por minuto, sino por la rigurosidad en el control determinista de los sistemas.</p>
+
+<p>El ingeniero de software moderno evoluciona desde la codificación manual hacia un rol ejecutivo de <strong>Arquitectura y Gobernanza Técnica</strong>. Tu principal valor diferencial radica en la capacidad de definir especificaciones matemáticas e inequívocas (<strong>SDD</strong>), construir barreras de contención inquebrantables (<strong>Harness Engineering</strong> y <strong>AGENTS.md</strong>), integrar puentes documentales precisos (<strong>RAG</strong> y <strong>MCP</strong>) y orquestar bucles de convergencia probados en producción (<strong>Loop Engineering</strong>).</p>
+
+<p>La adopción sistemática de estas metodologías transforma al LLM de un generador de código probabilístico en una infraestructura escalable, verificable y predecible para el desarrollo de sistemas críticos.</p>
+
+    </div>
+
+    
+      <div class="post-page__tags">
+        
+          <span class="badge badge--skill"># ia</span>
+        
+          <span class="badge badge--skill"># llm</span>
+        
+          <span class="badge badge--skill"># sdd</span>
+        
+          <span class="badge badge--skill"># multiagentes</span>
+        
+          <span class="badge badge--skill"># mcp</span>
+        
+          <span class="badge badge--skill"># prompt-engineering</span>
+        
+          <span class="badge badge--skill"># opencode</span>
+        
+          <span class="badge badge--skill"># buenas-practicas</span>
+        
+      </div>
+    
+
+    
+
+
+
+
+
+<div class="share-bar">
+  <span class="share-bar__label" data-i18n="share.label">Compartir</span>
+  <div class="share-bar__links">
+
+    <a class="share-btn share-btn--whatsapp"
+       href="https://wa.me/?text=Ingenier%C3%ADa+de+Software+con+IA%3A+Gu%C3%ADa+Definitiva+y+Referencia+T%C3%A9cnica+https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F07%2F02%2Fingenieria-de-software-con-ia-guia-y-referencia%2F"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--facebook"
+       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F07%2F02%2Fingenieria-de-software-con-ia-guia-y-referencia%2F"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--linkedin"
+       href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F07%2F02%2Fingenieria-de-software-con-ia-guia-y-referencia%2F"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+
+    <a class="share-btn share-btn--x"
+       href="https://x.com/intent/tweet?url=https%3A%2F%2Fmayc1030.github.io%2Fblog%2F2026%2F07%2F02%2Fingenieria-de-software-con-ia-guia-y-referencia%2F&text=Ingenier%C3%ADa+de+Software+con+IA%3A+Gu%C3%ADa+Definitiva+y+Referencia+T%C3%A9cnica"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Compartir en X">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+
+    <button class="share-btn share-btn--copy"
+            data-share-copy="https://mayc1030.github.io/blog/2026/07/02/ingenieria-de-software-con-ia-guia-y-referencia/"
+            aria-label="Copiar enlace">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>
+    </button>
+
+  </div>
+</div>
+
+
+    <nav class="post-page__nav" aria-label="Navegación entre posts">
+      
+        <a href="/blog/2026/07/01/desarrollo-videojuegos-3d-navegador-threejs-rapier/" class="post-page__nav-link post-page__nav-link--prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>
+            <small>Anterior</small>
+            <strong>Arquitectura de Videojuegos 3D en el Navegador con Three.js, Rapier y Web Audio</strong>
+          </span>
+        </a>
+      
+
+      
+        <div class="post-page__nav-spacer"></div>
+      
+    </nav>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      Diseñado &amp; construido por
+      <a href="#inicio">Maycol Sánchez</a>
+      &mdash; 2026
+    </p>
+    <div class="footer-social">
+      
+        
+          <a href="https://github.com/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  </svg>
+
+
+            <span>GitHub</span>
+          </a>
+        
+      
+        
+          <a href="https://www.linkedin.com/in/maycol-sanchez-salazar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+  </svg>
+
+
+            <span>LinkedIn</span>
+          </a>
+        
+      
+        
+          <a href="https://www.drupal.org/u/mayc1030" target="_blank" rel="noopener noreferrer" aria-label="Drupal">
+            
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+  </svg>
+
+
+            <span>Drupal</span>
+          </a>
+        
+      
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+
+    a {
+      color: var(--color-primary);
+      font-weight: var(--weight-medium);
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      font-weight: var(--weight-medium);
+      transition: color var(--transition-fast);
+
+      svg { width: 16px; height: 16px; flex-shrink: 0; }
+      &:hover { color: var(--color-primary); }
+    }
+  }
+</style>
+
+
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);" aria-hidden="true">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+      <line x1="14" y1="4" x2="10" y2="20"/>
+    </svg>
+  </button>
+
+  <script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>
